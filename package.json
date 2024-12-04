@@ -10,16 +10,23 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.5.1",
+    "@langchain/community": "^0.3.17",
+    "@langchain/core": "^0.3.20",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-progress": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "convex": "^1.17.3",
     "lucide-react": "^0.462.0",
     "next": "15.0.3",
+    "pdf-parse": "^1.1.1",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "uuid4": "^2.0.3"
   },
   "devDependencies": {
     "@types/node": "22.10.1",
