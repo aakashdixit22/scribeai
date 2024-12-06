@@ -2,10 +2,14 @@ import { NextResponse } from "next/server";
 import {WebPDFLoader} from "@langchain/community/document_loaders/web/pdf";
 import {RecursiveCharacterTextSplitter} from "langchain/text_splitter"
 
-const pdfUrl="https://secret-panda-783.convex.cloud/api/storage/136a2b5b-59b3-4fd9-89e9-4d2207cc67c9"
+// const pdfUrl="https://secret-panda-783.convex.cloud/api/storage/791f7e4d-8d96-4fdf-9363-48e043174e2f"
 export async function GET(req){
 
     //load the pdf file
+    const reqUrl=req.url;
+    const {searchParams}=new URL(reqUrl);
+    const pdfUrl=searchParams.get('pdfUrl');
+    console.log(pdfUrl);
     const response=await fetch(pdfUrl);
     const data=await response.blob();
     const loader=new WebPDFLoader(data);
