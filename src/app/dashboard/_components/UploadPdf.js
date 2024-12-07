@@ -66,6 +66,7 @@ function UploadPdf({ children }) {
     await embeddDocument({
       splitText: Apiresp.data.result,
       fileId: fileId,
+      apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY
     });
 
     setLoading(false);
