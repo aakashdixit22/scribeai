@@ -2,8 +2,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import {Outfit} from "next/font/google";
 import Provider from "./provider";
-
+import { neobrutalism } from "@clerk/themes";
 import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 
 
 
@@ -15,7 +16,11 @@ export const metadata = {
 const outfit =Outfit({subsets: ["latin"]});
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+    appearance={{
+        baseTheme: neobrutalism
+      }}
+    >
     <html lang="en">
       <body
       className={outfit.className}
