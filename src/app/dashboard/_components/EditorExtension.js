@@ -27,8 +27,7 @@ function EditorExtension({ editor, fileId }) {
     console.log("Selected Text:", selectedText);
     const result = await SearchAI({
       query: selectedText,
-      fileId: fileId,
-      apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+      fileId: fileId
     });
     console.log("unformattedResult:", result);
   };
