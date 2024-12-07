@@ -7,7 +7,7 @@ import Highlight from "@tiptap/extension-highlight";
 import Heading from "@tiptap/extension-heading";
 import EditorExtension from "./EditorExtension";
 import Underline from "@tiptap/extension-underline";
-function TextEditor() {
+function TextEditor({ fileId }) {
   const editor = useEditor({
     extensions: [
       
@@ -34,8 +34,8 @@ function TextEditor() {
   }
 
   return (
-    <div className="p-3 border rounded shadow-sm">
-      <EditorExtension editor={editor} />
+    <div className="p-3 rounded">
+      <EditorExtension editor={editor} fileId={fileId} />
       <div className="p-3 bg-white rounded-md shadow">
         <EditorContent editor={editor} />
       </div>
