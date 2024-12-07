@@ -115,6 +115,22 @@ body {
   } */
 }
 
+.tiptap ul {
+  list-style-type: disc;
+  list-style-position: outside; /* Bullets will appear outside the content box */
+  padding-left: 1.5rem; /* Add enough padding for proper spacing */
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  list-style-position: outside; /* Numbers will appear outside the content box */
+  padding-left: 1.5rem; /* Add enough padding for proper spacing */
+}
+
+.tiptap li {
+  margin-bottom: 0.5rem; /* Add spacing between list items */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
