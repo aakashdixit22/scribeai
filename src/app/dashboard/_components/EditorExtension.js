@@ -17,10 +17,13 @@ import {
 import React from "react";
 import { api } from "@/../convex/_generated/api";
 import { run } from "@/helper/AIModel";
+import { toast } from "sonner";
 
 function EditorExtension({ editor, fileId }) {
+  
   const SearchAI = useAction(api.myAction.search);
   const onAiClick = async () => {
+    toast("Analyzing the selected text...")
     const selectedText = editor.state.doc.textBetween(
       editor.state.selection.from,
       editor.state.selection.to,
@@ -47,6 +50,7 @@ function EditorExtension({ editor, fileId }) {
 
     const AllText = editor.getHTML();
     editor.commands.setContent(AllText +'<p><strong>Answer: </strong>'+response.response+'</p>');
+    toast("AI response added to the editor.")
 
   };
 

@@ -26,7 +26,7 @@ function Workspace() {
 
     return (
         <div>
-            <WorkspaceHeader />
+            <WorkspaceHeader fileName={fileInfo?.[0].fileName} />
             <div className="grid max-h-screen grid-cols-2 gap-5">
                 {/* Text Editor Section */}
                 <div className="h-screen overflow-y-scroll">

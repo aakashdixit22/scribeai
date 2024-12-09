@@ -5,6 +5,7 @@ import Provider from "./provider";
 import { neobrutalism } from "@clerk/themes";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { Toaster } from "@/components/ui/sonner";
 
 
 
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
       <Provider>
         {children}
       </Provider>
-        
+      <Toaster />
       </body>
     </html>
     </ClerkProvider>
