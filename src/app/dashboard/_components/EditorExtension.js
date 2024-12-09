@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import React from "react";
 import { api } from "@/../convex/_generated/api";
+import { run } from "@/helper/AIModel";
+
 function EditorExtension({ editor, fileId }) {
   const SearchAI = useAction(api.myAction.search);
   const onAiClick = async () => {
@@ -25,11 +27,24 @@ function EditorExtension({ editor, fileId }) {
       " " // Separator string
     );
     console.log("Selected Text:", selectedText);
-    const result = await SearchAI({
+    const unformattedResult = await SearchAI({
       query: selectedText,
-      fileId: fileId
+      fileId: fileId,
     });
-    console.log("unformattedResult:", result);
+    console.log("unformattedResult:", unformattedResult);
+    const resultList = JSON.parse(unformattedResult);
+    console.log("resultList:", resultList, typeof resultList);
+    let formattedResultList = [];
+    resultList.forEach((item) => formattedResultList.push(item.pageContent));
+
+    console.log("formattedResultList:", formattedResultList);
+    const PROMPT = `Based on the query: "${selectedText}", analyze the following vector search results and generate a concise and well-structured response. Use the provided context to create an accurate and detailed answer directly:
+                    Vector Search Results:
+                    ${formattedResultList.join("\n")}
+                    Answer:`;
+    const response = await run(PROMPT);
+    console.log("response:", response.response);
+
   };
 
   return (

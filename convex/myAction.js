@@ -9,8 +9,7 @@ import { v } from "convex/values";
 export const ingest = action({
   args: {
     splitText:v.any(),
-    fileId:v.string(),
-    apiKey:v.string(),
+    fileId:v.string()
   },
   handler: async (ctx,args) => {
     await ConvexVectorStore.fromTexts(
@@ -18,7 +17,7 @@ export const ingest = action({
       args.splitText,//array
       args.fileId,//str
       new GoogleGenerativeAIEmbeddings({
-        apiKey: args.apiKey,
+        apiKey: process.env.GOOGLE_API_KEY,
         model: "text-embedding-004", // 768 dimensions
         taskType: TaskType.RETRIEVAL_DOCUMENT,
         title: "Document title",
@@ -45,7 +44,7 @@ export const search = action({
       })
       , { ctx });
 
-      const results = await vectorStore.similaritySearch(args.query, 1);
+      const results = await vectorStore.similaritySearch(args.query, 3);
 
       // Function to reconstruct fileId from metadata
       const reconstructFileId = (metadata) => {
