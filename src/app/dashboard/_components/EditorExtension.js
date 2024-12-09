@@ -45,6 +45,9 @@ function EditorExtension({ editor, fileId }) {
     const response = await run(PROMPT);
     console.log("response:", response.response);
 
+    const AllText = editor.getHTML();
+    editor.commands.setContent(AllText +'<p><strong>Answer: </strong>'+response.response+'</p>');
+
   };
 
   return (
