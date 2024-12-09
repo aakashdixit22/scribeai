@@ -27,12 +27,13 @@ function Workspace() {
     return (
         <div>
             <WorkspaceHeader />
-            <div className='grid grid-cols-2 gap-5'>
-                <div>
-                    {/*Text Editor*/}
+            <div className="grid max-h-screen grid-cols-2 gap-5">
+                {/* Text Editor Section */}
+                <div className="h-screen overflow-y-scroll">
                     <TextEditor fileId={fileId} />
                 </div>
-                <div className=''>
+                {/* PDF Viewer Section */}
+                <div className="h-screen">
                     <PdfViewer fileUrl={fileInfo?.[0]?.fileUrl} />
                 </div>
             </div>
