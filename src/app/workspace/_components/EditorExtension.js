@@ -1,4 +1,4 @@
-import { useAction } from "convex/react";
+import { useAction, useMutation } from "convex/react";
 import {
   Bold,
   Italic,
@@ -14,13 +14,19 @@ import {
   Heading2,
   Heading3,
 } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { api } from "@/../convex/_generated/api";
 import { run } from "@/helper/AIModel";
 import { toast } from "sonner";
+import { useUser } from "@clerk/nextjs";
+import { useNotes } from "@/lib/context";
 
 function EditorExtension({ editor, fileId }) {
   
+  const {setNotes } = useNotes();
+
+  const saveNotes = useMutation(api.notes.AddNotes);
+  const {user} = useUser();
   const SearchAI = useAction(api.myAction.search);
   const onAiClick = async () => {
     toast("Analyzing the selected text...")
@@ -50,9 +56,25 @@ function EditorExtension({ editor, fileId }) {
 
     const AllText = editor.getHTML();
     editor.commands.setContent(AllText +'<p><strong>Answer: </strong>'+response.response+'</p>');
+    console.log({
+      fileId: fileId,
+      notes: editor.getHTML(),
+      createdBy: user?.primaryEmailAddress?.emailAddress
+    });
+    await saveNotes({
+      fileId: fileId,
+      notes: editor.getHTML(),
+      createdBy: user?.primaryEmailAddress?.emailAddress
+    });
     toast("AI response added to the editor.")
 
   };
+
+  editor.on('update', () => {
+    setNotes(editor.getHTML());
+  })
+  
+
 
   return (
     <div className="">

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
@@ -7,8 +8,21 @@ import Highlight from "@tiptap/extension-highlight";
 import Heading from "@tiptap/extension-heading";
 import EditorExtension from "./EditorExtension";
 import Underline from "@tiptap/extension-underline";
+import { useQuery } from "convex/react";
+import { api } from "../../../../convex/_generated/api";
 
 function TextEditor({ fileId }) {
+  
+
+  const notes = useQuery(api.notes.GetNotes, { fileId: fileId });
+  
+  useEffect(() => {
+    if (notes) {
+      editor.commands.setContent(notes);
+    }
+  }, [notes]);
+
+
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -28,10 +42,10 @@ function TextEditor({ fileId }) {
       },
     },
   });
-
   if (!editor) {
     return null; // Render nothing while the editor is initializing
   }
+  
 
   return (
     <div className="h-full flex flex-col rounded bg-gray-50 shadow">
