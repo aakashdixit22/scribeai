@@ -73,16 +73,16 @@ function UploadPdf({ children }) {
   };
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen} >
       <DialogTrigger asChild>
-        <Button onClick={() => setOpen(true)} className="w-full">
+      <Button onClick={() => setOpen(true)} className="w-full">
           +Upload PDF File
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Are you absolutely sure?</DialogTitle>
-          <DialogDescription>
+          <DialogDescription asChild>
             <div>
               <h2 className="mt-5">Select a file to upload </h2>
               <div className="flex gap-2 p-3  mt-5 rounded-md border">
