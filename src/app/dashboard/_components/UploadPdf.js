@@ -46,7 +46,7 @@ function UploadPdf({ children }) {
       body: file,
     });
     const { storageId } = await result.json();
-    console.log("storageid", storageId);
+
 
     const fileId = uuid4();
     const fileUrl = await getFileUrl({ storageId: storageId });
@@ -58,11 +58,10 @@ function UploadPdf({ children }) {
       createdBy: user?.primaryEmailAddress?.emailAddress,
       fileUrl: fileUrl,
     });
-    console.log(resp);
-    console.log(fileUrl);
+    
 
     const Apiresp = await axios.get("/api/pdf-loader?pdfUrl=" + fileUrl);
-    console.log(Apiresp.data.result);
+    
     await embeddDocument({
       splitText: Apiresp.data.result,
       fileId: fileId

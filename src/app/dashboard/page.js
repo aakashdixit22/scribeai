@@ -12,7 +12,6 @@ function Page() {
     userEmail: user?.primaryEmailAddress?.emailAddress,
   });
 
-  console.log(fileList);
 
   return (
     <div>

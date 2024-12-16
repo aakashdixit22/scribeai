@@ -1,7 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export async function run(prompt) {
-  console.log("prompt", prompt);
   const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
   
   const genAI = new GoogleGenerativeAI(apiKey);
@@ -23,7 +22,5 @@ export async function run(prompt) {
 
   const result = await chatSession.sendMessage(prompt);
   const formattedResponse = { response: result.response.text() };
-
-  console.log(formattedResponse);
   return formattedResponse;
 }

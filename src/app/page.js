@@ -23,7 +23,7 @@ export default function Home() {
       imageUrl:user?.imageUrl,
       userName:user?.fullName,
     });
-    console.log(result);
+    
   };
 
 
