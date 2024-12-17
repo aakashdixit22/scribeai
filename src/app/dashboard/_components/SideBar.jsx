@@ -37,7 +37,7 @@ function SideBar() {
       </div>
       <div className="absolute bottom-10 w-[80%]">
         <Progress  value={(fileList?.length/5)*100} />
-        <p className="text-xs text-black mt-2">2 out of 5 PDF uploaded</p>
+        <p className="text-xs text-black mt-2">{fileList?.length} out of 5 PDF uploaded</p>
         <p className="text-xs text-gray-400 mt-2">Upgrade to unlock more features</p>
       </div>
     </div>
