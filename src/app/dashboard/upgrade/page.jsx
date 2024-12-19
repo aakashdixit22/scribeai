@@ -1,160 +1,165 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react';
+import { Check, Sparkles } from 'lucide-react';
 
-const page = () => {
+const PricingPage = () => {
+  const [isYearly, setIsYearly] = useState(false);
+
+  const plans = [
+    {
+      name: 'Free',
+      description: 'Perfect for getting started',
+      price: { monthly: 0, yearly: 0 },
+      features: [
+        '2 auto tracking',
+        '7 Day transaction clearing',
+        '24/7 Customer support',
+        'All widget access'
+      ],
+      isPopular: false
+    },
+    {
+      name: 'Advanced',
+      description: 'Best for professionals',
+      price: { monthly: 150, yearly: 1500 },
+      features: [
+        'AI Advisor',
+        'Unlimited auto tracking',
+        '1 Day transaction clearing',
+        'Priority customer support',
+        'All Widget Access'
+      ],
+      isPopular: true
+    },
+    {
+      name: 'Team',
+      description: 'For growing teams',
+      price: { monthly: 180, yearly: 1800 },
+      features: [
+        'AI Advisor',
+        'Unlimited auto tracking',
+        '1 Day transaction clearing',
+        'Priority customer support',
+        'All Widget Access',
+        'Team collaboration tools'
+      ],
+      isPopular: false
+    }
+  ];
+
   return (
-    <div>
-      <h2>Plans</h2>
-      <p>Upgrade your account to unlock more features</p>
-      <section className="py-24 ">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-                <h2 className="font-manrope text-5xl text-center font-bold text-gray-900 mb-4">Choose your plan </h2>
-                <p className="text-gray-500 text-center leading-6 mb-9">7 Days free trial. No credit card required.</p>
-                       <div className="flex justify-center items-center">
-                    <label className="min-w-[3.5rem] text-xl relative text-gray-900 mr-4 font-medium">Bill Monthly</label>
-                    <input type="checkbox" id="basic-with-description"
-                        className="relative shrink-0 w-11 h-6 p-0.5 bg-indigo-100 checked:bg-none checked:bg-indigo-100 rounded-full cursor-pointer transition-colors ease-in-out duration-200  focus:border-blue-600  appearance-none 
-
-                            before:inline-block before:w-5 before:h-5 before:bg-indigo-600 checked:before:bg-indigo-600 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform  before:transition before:ease-in-out before:duration-200 " />
-                    <label className="relative min-w-[3.5rem] font-medium text-xl text-gray-500 ml-4 ">
-                        Bill Yearly
-                    </label>
-                </div>
-                           </div>
-                   <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-8 lg:space-y-0 lg:items-center">
-                    
-                    <div className="flex flex-col mx-auto max-w-sm text-gray-900 rounded-2xl bg-gray-50 p-6 xl:py-9 xl:px-12 transition-all duration-500 hover:bg-gray-100">
-                        <h3 className="font-manrope text-2xl font-bold mb-3">Free</h3>
-                        <div className="flex items-center mb-6">
-                            <span className="font-manrope mr-2 text-6xl font-semibold">$0</span>
-                            <span className="text-xl text-gray-500 ">/ month</span>
-                        </div>
-                                   <ul className="mb-12 space-y-6 text-left text-lg text-gray-500">
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>2 auto tracking</span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>7 Day transaction clearing </span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>24/7 Customer support </span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>All widget access</span>
-                            </li>
-                        </ul>
-                        <a href="javascript:;"  className="py-2.5 px-5 bg-indigo-600 shadow-sm rounded-full transition-all duration-500 text-base text-white font-semibold text-center w-fit mx-auto hover:bg-indigo-700">Purchase Plan</a>
-                                       </div> 
-                    
-                    <div className="flex flex-col mx-auto max-w-sm text-gray-900 rounded-2xl bg-indigo-50 transition-all duration-500 hover:bg-indigo-100 ">
-                        <div className="uppercase bg-gradient-to-r from-indigo-600 to-violet-600 rounded-t-2xl p-3 text-center text-white">
-                            MOST POPULAR
-                        </div>   
-                        <div className="p-6 xl:py-9 xl:px-12">
-                        <h3 className="font-manrope text-2xl font-bold mb-3">Advanced</h3>
-                        <div className="flex items-center mb-6">
-                            <span className="font-manrope mr-2 text-6xl font-semibold text-indigo-600">$150</span>
-                            <span className="text-xl text-gray-500 ">/ month</span>
-                        </div>
-                                   <ul className="mb-12 space-y-6 text-left text-lg ">
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>AI Advisor</span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>Unlimited auto tracking</span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>1 Day transaction clearing </span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>Priority customer support</span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>All Widget Access</span>
-                            </li>
-                        </ul>
-                        <a href="javascript:;"  className="py-2.5 px-5 bg-indigo-600 shadow-sm rounded-full transition-all duration-500 text-base text-white font-semibold text-center w-fit block mx-auto hover:bg-indigo-700">Purchase Plan</a>
-                                       </div>
-                    </div> 
-                     
-                     <div className="flex flex-col mx-auto max-w-sm text-gray-900 rounded-2xl bg-gray-50 p-6 xl:py-9 xl:px-12 transition-all duration-500 hover:bg-gray-100">
-                        <h3 className="font-manrope text-2xl font-bold mb-3">Team</h3>
-                        <div className="flex items-center mb-6">
-                            <span className="font-manrope mr-2 text-6xl font-semibold">$180</span>
-                            <span className="text-xl text-gray-500 ">/ month</span>
-                        </div>
-                                   <ul className="mb-12 space-y-6 text-left text-lg text-gray-500">
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>AI Advisor</span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>Unlimited auto tracking </span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>1 Day transaction clearing </span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                
-                                <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>Priority customer support</span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                                       <svg className="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                <span>All Widget Access</span>
-                            </li>
-                        </ul>
-                        <a href="javascript:;"  className="py-2.5 px-5 bg-indigo-600 shadow-sm rounded-full transition-all duration-500 text-base text-white font-semibold text-center w-fit mx-auto hover:bg-indigo-700">Purchase Plan</a>
-                       
-                    </div> 
-                </div>
-                
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <div className="px-4 py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-8 mb-16">
+            <div className="flex items-center justify-center gap-2 text-indigo-600 font-medium mb-4">
+              <Sparkles className="h-5 w-5" />
+              <span>New Features Available</span>
+            </div>
             
+            <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 tracking-tight">
+              Choose your perfect plan
+            </h1>
+            
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Start with our free plan and upgrade as you grow. No credit card required.
+            </p>
+            
+            <div className="inline-flex items-center justify-center gap-4 p-1 bg-gray-100/80 backdrop-blur-sm rounded-full">
+              <span className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                !isYearly ? 'bg-white shadow-md text-gray-900' : 'text-gray-600'
+              }`}>
+                Monthly
+              </span>
+              <button
+                onClick={() => setIsYearly(!isYearly)}
+                className="relative w-14 h-7 rounded-full bg-indigo-600/10 transition-colors focus:outline-none"
+              >
+                <span
+                  className={`absolute left-1 top-1 h-5 w-5 transform rounded-full bg-indigo-600 shadow transition-transform duration-300 ${
+                    isYearly ? 'translate-x-7' : ''
+                  }`}
+                />
+              </button>
+              <span className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                isYearly ? 'bg-white shadow-md text-gray-900' : 'text-gray-600'
+              }`}>
+                Yearly
+                <span className="ml-2 text-sm text-indigo-600 font-medium">
+                  Save 20%
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative rounded-3xl p-8 transition-all duration-300 hover:scale-105 ${
+                  plan.isPopular 
+                    ? 'bg-gradient-to-b from-indigo-600 to-violet-600 text-white shadow-xl'
+                    : 'bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl'
+                }`}
+              >
+                {plan.isPopular && (
+                  <div className="absolute -top-4 left-0 right-0 mx-auto w-36 rounded-full bg-gradient-to-r from-amber-400 to-orange-400 px-3 py-1 text-sm font-medium text-white text-center shadow-lg">
+                    Recommended
+                  </div>
+                )}
+
+                <div className="mb-8">
+                  <h3 className={`text-2xl font-bold ${plan.isPopular ? 'text-white' : 'text-gray-900'}`}>
+                    {plan.name}
+                  </h3>
+                  <p className={`mt-2 ${plan.isPopular ? 'text-indigo-100' : 'text-gray-600'}`}>
+                    {plan.description}
+                  </p>
+                  <div className="mt-6 flex items-baseline">
+                    <span className={`text-5xl font-bold tracking-tight ${
+                      plan.isPopular ? 'text-white' : 'text-gray-900'
+                    }`}>
+                      ${isYearly ? plan.price.yearly : plan.price.monthly}
+                    </span>
+                    <span className={`ml-2 ${plan.isPopular ? 'text-indigo-100' : 'text-gray-600'}`}>
+                      /{isYearly ? 'year' : 'month'}
+                    </span>
+                  </div>
+                </div>
+
+                <ul className="space-y-4 mb-8">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3">
+                      <div className={`rounded-full p-1 ${
+                        plan.isPopular ? 'bg-indigo-400/20' : 'bg-indigo-100'
+                      }`}>
+                        <Check className={`h-4 w-4 ${
+                          plan.isPopular ? 'text-indigo-100' : 'text-indigo-600'
+                        }`} />
+                      </div>
+                      <span className={plan.isPopular ? 'text-indigo-100' : 'text-gray-700'}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <button
+                  className={`w-full rounded-2xl px-4 py-4 text-center font-medium transition-all duration-300 ${
+                    plan.isPopular
+                      ? 'bg-white text-indigo-600 hover:bg-gray-50'
+                      : 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white hover:opacity-90'
+                  }`}
+                >
+                  Get started
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
-    </section>
-                                            
-
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default PricingPage;
