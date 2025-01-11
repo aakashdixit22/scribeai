@@ -6,6 +6,7 @@ import { neobrutalism } from "@clerk/themes";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Toaster } from "@/components/ui/sonner";
+import SplashCursor from "@/components/SplashCursor";
 
 
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
       <Provider>
         {children}
       </Provider>
+      <SplashCursor />
       <Toaster />
       </body>
     </html>
