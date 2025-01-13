@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       <Provider>
         {children}
       </Provider>
-      <SplashCursor />
+      {/* <SplashCursor /> */}
       <Toaster />
       </body>
     </html>

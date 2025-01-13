@@ -7,6 +7,9 @@ import { useMutation } from "convex/react";
 import HomeNavbar from "@/components/HomeNavbar";
 import Hero from "@/components/Hero";
 import DevelopersShowcase from "@/components/Developers";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const { user } = useUser();
@@ -31,8 +34,11 @@ export default function Home() {
       <HomeNavbar />
 
       <Hero />
-      <Hero />
+      <About />
       <DevelopersShowcase />
+      <Contact />
+      <Footer />
+    
     </div>
   );
 }
