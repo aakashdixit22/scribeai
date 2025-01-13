@@ -1,12 +1,12 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+
 import { useEffect } from "react";
 import { api } from "../../convex/_generated/api";
-import { UserButton, useUser } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import HomeNavbar from "@/components/HomeNavbar";
 import Hero from "@/components/Hero";
+import DevelopersShowcase from "@/components/Developers";
 
 export default function Home() {
   const { user } = useUser();
@@ -32,6 +32,7 @@ export default function Home() {
 
       <Hero />
       <Hero />
+      <DevelopersShowcase />
     </div>
   );
 }
