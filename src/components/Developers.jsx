@@ -67,7 +67,7 @@ const DeveloperSection = () => {
   ];
 
   return (
-    <section className="bg-black pt-32">
+    <section className="bg-black py-20">
       <div className="container mx-auto px-20">
         <div className="text-center mb-12">
         <h2 className="lg:text-5xl text-4xl md:text-5xl font-semibold text-gray-100 mb-6">Developers</h2>
