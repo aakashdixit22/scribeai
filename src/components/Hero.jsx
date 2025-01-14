@@ -212,7 +212,7 @@ const Hero = () => {
   }, [currentStep]);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800">
+    <div className="relative min-h-screen bg-transparent">
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -left-1/4 top-0 h-[500px] w-[500px] animate-blob rounded-full bg-blue-500/30 blur-3xl"></div>

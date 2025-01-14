@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div className='px-6'>
+    <div className='px-6 bg-transparent'>
             <section className="min-h-screen w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto my-5 rounded-3xl  bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 ">
     <div className="container flex flex-col min-h-screen px-1 py-12 mx-auto">
         <div className="flex-1 lg:flex lg:items-center lg:-mx-6">

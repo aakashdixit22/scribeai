@@ -67,7 +67,7 @@ import { WobbleCard } from "./ui/wobble-card";
 
 export function Features() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full px-6">
+    <div className="grid bg-transparent grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full px-6">
       <WobbleCard
         containerClassName="col-span-1 lg:col-span-2 h-full bg-gray-800 min-h-[500px] lg:min-h-[300px] relative overflow-hidden"
         className="w-full h-full">
