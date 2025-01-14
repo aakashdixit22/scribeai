@@ -213,13 +213,7 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen bg-transparent">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -left-1/4 top-0 h-[500px] w-[500px] animate-blob rounded-full bg-blue-500/30 blur-3xl"></div>
-        <div className="absolute -right-1/4 top-1/4 h-[500px] w-[500px] animate-blob animation-delay-2000 rounded-full bg-purple-500/30 blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 h-[500px] w-[500px] animate-blob animation-delay-4000 rounded-full bg-pink-500/30 blur-3xl"></div>
-      </div>
-
+      
       {/* Main content */}
       <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Header Badge */}

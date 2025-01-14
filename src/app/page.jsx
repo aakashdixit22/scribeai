@@ -38,7 +38,7 @@ export default function Home() {
           speed={0.5}
           squareSize={80}
           direction="diagonal"
-          borderColor="#272727"
+          borderColor="#404040"
           hoverFillColor="rgba(122, 122, 122, 0.2)"
         />
       </div>
