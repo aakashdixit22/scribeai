@@ -10,6 +10,7 @@ import DevelopersShowcase from "@/components/Developers";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { WobbleCardDemo } from "@/components/Features";
 
 export default function Home() {
   const { user } = useUser();
@@ -38,7 +39,7 @@ export default function Home() {
       <DevelopersShowcase />
       <Contact />
       <Footer />
-    
+      <WobbleCardDemo />
     </div>
   );
 }
