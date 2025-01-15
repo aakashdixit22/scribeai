@@ -48,12 +48,12 @@ const PricingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-      <div className="px-4 py-24">
+    <div className="min-h-screen bg-gray-900 text-white">
+      <div className="px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-8 mb-16">
-            <div className="flex items-center justify-center gap-2 text-indigo-600 font-medium mb-4">
-              <Sparkles className="h-5 w-5" />
+          <div className="text-center space-y-2 mb-12">
+            <div className="flex items-center justify-center gap-2 text-indigo-600 font-medium mb-2">
+              <Sparkles className="h-5 w-5 text-yellow-400" />
               <span>New Features Available</span>
             </div>
             
@@ -61,19 +61,19 @@ const PricingPage = () => {
               Choose your perfect plan
             </h1>
             
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Start with our free plan and upgrade as you grow. No credit card required.
             </p>
             
-            <div className="inline-flex items-center justify-center gap-4 p-1 bg-gray-100/80 backdrop-blur-sm rounded-full">
+            <div className="inline-flex items-center justify-center gap-4 p-1 bg-gray-800/80 backdrop-blur-sm rounded-full">
               <span className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                !isYearly ? 'bg-white shadow-md text-gray-900' : 'text-gray-600'
+                !isYearly ? 'bg-gray-700 text-white' : 'text-gray-400'
               }`}>
                 Monthly
               </span>
               <button
                 onClick={() => setIsYearly(!isYearly)}
-                className="relative w-14 h-7 rounded-full bg-indigo-600/10 transition-colors focus:outline-none"
+                className="relative w-14 h-7 rounded-full bg-indigo-600/20 transition-colors focus:outline-none"
               >
                 <span
                   className={`absolute left-1 top-1 h-5 w-5 transform rounded-full bg-indigo-600 shadow transition-transform duration-300 ${
@@ -82,7 +82,7 @@ const PricingPage = () => {
                 />
               </button>
               <span className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                isYearly ? 'bg-white shadow-md text-gray-900' : 'text-gray-600'
+                isYearly ? 'bg-gray-700 text-white' : 'text-gray-400'
               }`}>
                 Yearly
                 <span className="ml-2 text-sm text-indigo-600 font-medium">
@@ -99,7 +99,7 @@ const PricingPage = () => {
                 className={`relative rounded-3xl p-8 transition-all duration-300 hover:scale-105 ${
                   plan.isPopular 
                     ? 'bg-gradient-to-b from-indigo-600 to-violet-600 text-white shadow-xl'
-                    : 'bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl'
+                    : 'bg-gray-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl'
                 }`}
               >
                 {plan.isPopular && (
@@ -109,19 +109,19 @@ const PricingPage = () => {
                 )}
 
                 <div className="mb-8">
-                  <h3 className={`text-2xl font-bold ${plan.isPopular ? 'text-white' : 'text-gray-900'}`}>
+                  <h3 className={`text-2xl font-bold ${plan.isPopular ? 'text-white' : 'text-gray-100'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`mt-2 ${plan.isPopular ? 'text-indigo-100' : 'text-gray-600'}`}>
+                  <p className={`mt-2 ${plan.isPopular ? 'text-indigo-100' : 'text-gray-400'}`}>
                     {plan.description}
                   </p>
                   <div className="mt-6 flex items-baseline">
                     <span className={`text-5xl font-bold tracking-tight ${
-                      plan.isPopular ? 'text-white' : 'text-gray-900'
+                      plan.isPopular ? 'text-white' : 'text-gray-100'
                     }`}>
                       ${isYearly ? plan.price.yearly : plan.price.monthly}
                     </span>
-                    <span className={`ml-2 ${plan.isPopular ? 'text-indigo-100' : 'text-gray-600'}`}>
+                    <span className={`ml-2 ${plan.isPopular ? 'text-indigo-100' : 'text-gray-400'}`}>
                       /{isYearly ? 'year' : 'month'}
                     </span>
                   </div>
@@ -137,7 +137,7 @@ const PricingPage = () => {
                           plan.isPopular ? 'text-indigo-100' : 'text-indigo-600'
                         }`} />
                       </div>
-                      <span className={plan.isPopular ? 'text-indigo-100' : 'text-gray-700'}>
+                      <span className={plan.isPopular ? 'text-indigo-100' : 'text-gray-400'}>
                         {feature}
                       </span>
                     </li>
