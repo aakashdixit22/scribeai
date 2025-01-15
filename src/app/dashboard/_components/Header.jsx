@@ -1,5 +1,5 @@
 import React from "react";
-import { UserButton, useUser } from "@clerk/nextjs";
+import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
 import { Bell, Home, Smile } from "lucide-react";
 import Link from "next/link";
 
@@ -35,8 +35,16 @@ function Header() {
             <Home className="text-gray-400" size={24} />
           </button>
         </Link>
-
-        <UserButton />
+        
+                <SignOutButton redirectUrl="/logout">
+          <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+            <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
+              <span className="relative z-10 font-medium text-sm text-white">
+                Sign out
+              </span>
+            </div>
+          </button>
+        </SignOutButton>
       </div>
     </div>
   );
