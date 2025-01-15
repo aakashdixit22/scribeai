@@ -110,8 +110,8 @@ const DeveloperCard = ({ name, designation, image, githubLink, linkedinLink }) =
             </div>
             
             {/* Floating code icon */}
-            <div className="absolute -bottom-2 bg-slate-800/90 rounded-full right-4 transform  transition-all duration-500 group-hover:rotate-0 group-hover:scale-110">
-              <div className="bg-slate-800/90 p-3 rounded-full shadow-lg">
+            <div className="absolute -bottom-2 rounded-full right-4 transform  transition-all duration-500 group-hover:rotate-0 group-hover:scale-110">
+              <div className="bg-slate-800 p-3 rounded-full shadow-lg">
                 <Code size={20} className="text-white" />
               </div>
             </div>

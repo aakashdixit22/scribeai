@@ -69,7 +69,7 @@ export function Features() {
   return (
     <div className="grid bg-transparent grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full px-6">
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-2 h-full bg-slate-800/90 min-h-[500px] lg:min-h-[300px] relative overflow-hidden"
+        containerClassName="col-span-1 lg:col-span-2 h-full bg-slate-800 min-h-[500px] lg:min-h-[300px] relative overflow-hidden"
         className="w-full h-full">
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="w-full md:w-1/2 p-6">
@@ -93,7 +93,7 @@ export function Features() {
         </div>
       </WobbleCard>
 
-      <WobbleCard containerClassName="col-span-1 bg-slate-800/90 min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 bg-slate-800 min-h-[300px]">
         <div className="p-6">
           <h2 className="max-w-80 text-left text-balance text-2xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
             No shirt, no shoes, no weapons.
@@ -105,7 +105,7 @@ export function Features() {
       </WobbleCard>
 
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-3 bg-slate-800/90 min-h-[500px] lg:min-h-[300px] relative overflow-hidden"
+        containerClassName="col-span-1 lg:col-span-3 bg-slate-800 min-h-[500px] lg:min-h-[300px] relative overflow-hidden"
         className="w-full h-full">
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="w-full md:w-1/2 p-6">
