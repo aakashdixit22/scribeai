@@ -1,7 +1,6 @@
 "use client"
-import React, { use } from "react";
+import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Layout, Shield } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import UploadPdf from "./UploadPdf";
@@ -17,40 +16,43 @@ function SideBar() {
   const fileList = useQuery(api.fileStorage.GetUseriles, {
     userEmail: user?.primaryEmailAddress?.emailAddress,
   });
-  console.log((fileList?.length / 5) * 100);
 
   return (
-    <div className="shadow-sm h-screen p-7">
-      <Image src={"/logo.svg"} alt="logo" width={150} height={150} />
-      <div className="mt-10">
-        <UploadPdf />
-        <Link href="/dashboard">
-        <div
-          className={`flex gap-2 items-center p-3 mt-5 rounded-lg cursor-pointer ${
-            path === "/dashboard" ? "bg-slate-300" : "hover:bg-slate-200"
-          }`}
-        >
-          <Layout />
-          <h2>Workspace</h2>
-        </div>
-        </Link>
-        <Link href="/dashboard/upgrade">
-        <div
-          className={`flex gap-2 items-center p-3 mt-1 rounded-lg cursor-pointer ${
-            path === "/dashboard/upgrade" ? "bg-slate-300" : "hover:bg-slate-200"
-          }`}
-        >
-          <Shield />
-          <h2>Upgrade</h2>
-        </div>
-        </Link>
+    <div className="shadow-md h-screen p-7 bg-gray-900 text-white relative flex flex-col border-r border-gray-700">
+      <div className="flex justify-center mb-6">
+        <Image src={"/logo.svg"} alt="logo" width={150} height={150} />
       </div>
-      <div className="absolute bottom-10 w-[80%]">
-        <Progress value={(fileList?.length / 5) * 100} />
-        <p className="text-xs text-black mt-2">
-          {fileList?.length} out of 5 PDF uploaded
+      <div className="mt-5 space-y-3 flex-1">
+        <UploadPdf />
+        <nav className="space-y-2">
+          <Link href="/dashboard">
+            <div
+              className={`flex gap-3 items-center p-3 rounded-lg cursor-pointer transition-colors font-medium ${
+                path === "/dashboard" ? "bg-gray-700" : "hover:bg-gray-800"
+              }`}
+            >
+              <Layout className="text-white" />
+              <span>Workspace</span>
+            </div>
+          </Link>
+          <Link href="/dashboard/upgrade">
+            <div
+              className={`flex gap-3 items-center p-3 rounded-lg cursor-pointer transition-colors font-medium ${
+                path === "/dashboard/upgrade" ? "bg-gray-700" : "hover:bg-gray-800"
+              }`}
+            >
+              <Shield className="text-white" />
+              <span>Upgrade</span>
+            </div>
+          </Link>
+        </nav>
+      </div>
+      <div className="mt-auto">
+        <Progress value={(fileList?.length / 5) * 100} className="bg-gray-700" />
+        <p className="text-xs text-gray-300 mt-2">
+          {fileList?.length} out of 5 PDFs uploaded
         </p>
-        <p className="text-xs text-gray-400 mt-2">
+        <p className="text-xs text-gray-500 mt-2">
           Upgrade to unlock more features
         </p>
       </div>
