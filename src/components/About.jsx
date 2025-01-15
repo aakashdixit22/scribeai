@@ -20,11 +20,13 @@ const About = () => {
                   fabric of society.
                 </p>
               </div>
-              <button className="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
-                <span className="px-1.5 text-white text-sm font-medium leading-6">
-                  Get Started
-                </span>
-              </button>
+              <button className=" group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+                  <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
+                    <span className="relative z-10 font-medium text-sm text-white">
+                      Check it out
+                    </span>
+                  </div>
+                </button>
             </div>
             <img
               className="lg:mx-0 mx-auto h-full rounded-3xl object-cover"

@@ -48,22 +48,22 @@ export default function HomeNavbar() {
         <div className={`${isMenuOpen ? 'block' : 'hidden'} w-full md:block md:w-auto md:order-1`}>
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li>
-              <Link href="/" className="block py-2 px-3 text-white hover:bg-slate-600 rounded md:bg-transparent  md:p-0 md:text-blue-500">
+              <Link href="/" className="block py-2 px-3 text-white md:hover:text-slate-600 rounded md:bg-transparent  md:p-0">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="block py-2 px-3  rounded   md:p-0 md:hover:text-blue-500 text-white hover:bg-slate-600 hover:text-white md:hover:bg-transparent border-gray-700">
+              <Link href="/about" className="block py-2 px-3  rounded   md:p-0 md:hover:text-slate-600 text-white hover:bg-slate-600 hover:text-white md:hover:bg-transparent border-gray-700">
                 About
               </Link>
             </li>
             <li>
-              <Link href="/services" className="block py-2 px-3  rounded  md:p-0 md:hover:text-blue-500 text-white hover:bg-slate-600 hover:text-white md:hover:bg-transparent border-gray-700">
+              <Link href="/services" className="block py-2 px-3  rounded  md:p-0 md:hover:text-slate-600 text-white hover:bg-slate-600 hover:text-white md:hover:bg-transparent border-gray-700">
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="block py-2 px-3  rounded   md:p-0 md:hover:text-blue-500 text-white hover:bg-slate-600 hover:text-white md:hover:bg-transparent border-gray-700">
+              <Link href="/contact" className="block py-2 px-3  rounded   md:p-0 md:hover:text-slate-600 text-white hover:bg-slate-600 hover:text-white md:hover:bg-transparent border-gray-700">
                 Contact
               </Link>
             </li>

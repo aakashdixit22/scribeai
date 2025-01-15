@@ -58,14 +58,13 @@ const Contact = () => {
           </div>
           
           <div className="flex justify-center mt-8">
-            <button
-              type="submit"
-              className="px-6 py-3 text-sm font-medium text-white bg-slate-800 rounded-lg
-                hover:bg-slate-500 focus:ring-4 focus:ring-blue-500/50 focus:outline-none
-                transition-all duration-200 ease-in-out transform hover:-translate-y-0.5"
-            >
-              Send Message
-            </button>
+          <button className=" group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+                  <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
+                    <span className="relative z-10 font-medium text-sm text-white">
+                      Send Message
+                    </span>
+                  </div>
+                </button>
           </div>
         </form>
       </div>
