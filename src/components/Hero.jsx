@@ -73,21 +73,9 @@ const Hero = () => {
               <h1 className="text-5xl font-bold tracking-tight text-white lg:text-7xl">
                 Smart PDF
                 <span className="relative mt-2 block">
-                  <span className="relative inline-block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  <span className="relative inline-block bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
                     Analysis with AI
                   </span>
-                  <svg
-                    className="absolute -bottom-2 left-0 h-3 w-full text-blue-400/20"
-                    viewBox="0 0 100 10"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M0 5 Q 25 0, 50 5 Q 75 10, 100 5"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      fill="none"
-                    />
-                  </svg>
                 </span>
               </h1>
 
@@ -98,15 +86,15 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
-                <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-[2px]">
-                  <div className="relative rounded-lg bg-slate-900 px-6 py-3 transition-colors group-hover:bg-slate-800">
+                <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+                  <div className="relative rounded-lg bg-slate-800 px-6 py-3 transition-colors group-hover:bg-slate-600">
                     <span className="relative z-10 font-medium text-white">
                       Start Analyzing
                     </span>
                   </div>
                 </button>
 
-                <button className="group flex items-center gap-2 rounded-lg border border-slate-700 px-6 py-3 text-white transition-all hover:border-blue-400">
+                <button className="group flex items-center gap-2 rounded-lg border border-slate-700 px-6 py-3 text-white transition-all hover:border-g">
                   <span>Watch Demo</span>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
@@ -124,7 +112,7 @@ const Hero = () => {
                   <div className="flex items-center gap-3">
                     <FileText className="h-5 w-5 text-blue-400" />
                     <span className="font-medium text-slate-200">
-                      research-paper.pdf
+                      Research-paper.pdf
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -231,7 +219,7 @@ const Hero = () => {
 
                 {/* Floating elements */}
                 <div className="absolute -right-4 -top-4 animate-pulse">
-                  <div className="m-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 p-3">
+                  <div className="m-2 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-3">
                     <Brain className="h-6 w-6 text-white" />
                   </div>
                 </div>
