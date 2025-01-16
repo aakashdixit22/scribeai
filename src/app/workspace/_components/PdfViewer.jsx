@@ -2,7 +2,7 @@ import React from 'react';
 
 function PdfViewer({ fileUrl }) {
   return (
-    <div className="bg-gray-900 h-screen flex justify-center items-center p-4">
+    <div className="bg-gray-900 h-screen flex justify-center items-center">
       <iframe
         src={fileUrl + "#toolbar=0"}
         width="150%"

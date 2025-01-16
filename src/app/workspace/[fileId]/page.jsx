@@ -37,7 +37,7 @@ function Workspace() {
                 </div>
 
                 {/* Grid Layout for Editor & PDF Viewer */}
-                <div className="flex-1 grid lg:grid-cols-2 md:grid-cols-1 gap-2 sm:gap-4 sm:p-4">
+                <div className="flex-1 grid lg:grid-cols-2 md:grid-cols-1 gap-1 sm:gap-3 sm:p-4">
                     {/* Text Editor Section */}
                     <div className="h-[calc(100vh-7rem)] bg-gray-800 rounded-lg shadow-md border border-gray-700">
                         <div className="h-full overflow-auto">
