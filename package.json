@@ -18,6 +18,8 @@
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-progress": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "@tiptap/extension-bold": "^2.10.3",
     "@tiptap/extension-heading": "^2.10.3",
     "@tiptap/extension-highlight": "^2.10.3",
