@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
@@ -7,6 +7,7 @@ import Link from "next/link";
 
 function Page() {
   const { user } = useUser();
+  const [searchTerm, setSearchTerm] = useState("");
   const fileList = useQuery(api.fileStorage.GetUseriles, {
     userEmail: user?.primaryEmailAddress?.emailAddress,
   });
@@ -22,12 +23,23 @@ function Page() {
     }
   };
 
+  const filteredFiles = fileList?.filter(file => 
+    file.fileName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="bg-gray-900 text-white min-h-screen p-5">
       <h1 className="font-bold text-3xl">Workspace</h1>
+      <input
+        type="text"
+        placeholder="Search files..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full max-w-md mt-4 p-2 rounded bg-gray-800 text-white border border-gray-700"
+      />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-10">
-        {fileList &&
-          fileList.map((file, index) => (
+        {filteredFiles &&
+          filteredFiles.map((file, index) => (
             <div key={index} className="relative">
               <Link href={`/workspace/${file.fileId}`}>
                 <div className="flex p-5 shadow-md flex-col rounded-md items-center justify-center border-2 border-gray-700 cursor-pointer hover:scale-105 transition-all bg-gray-800">
