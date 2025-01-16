@@ -19,7 +19,7 @@ function WorkspaceHeader({ fileName, fileId }) {
   };
 
   return (
-    <div className="p-4 flex justify-between items-center shadow-md bg-gray-900 text-white border-b border-gray-700">
+    <div className="p-2 pb-3 flex justify-between items-center shadow-md bg-gray-900 text-white border-b border-gray-700">
       {/* Logo */}
       <div className="flex items-center">
         <Image src="/logo.svg" alt="logo" width={140} height={100} />
