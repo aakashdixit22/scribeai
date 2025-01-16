@@ -7,7 +7,10 @@ function Header() {
   const { user } = useUser();
 
   const toTitleCase = (str) => {
-    return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+    return str.replace(
+      /\w\S*/g,
+      (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    );
   };
 
   return (
@@ -35,8 +38,8 @@ function Header() {
             <Home className="text-gray-400" size={24} />
           </button>
         </Link>
-        
-                <SignOutButton redirectUrl="/logout">
+
+        <SignOutButton signOutOptions={{redirectUrl: "/logout"}} >
           <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
             <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
               <span className="relative z-10 font-medium text-sm text-white">
