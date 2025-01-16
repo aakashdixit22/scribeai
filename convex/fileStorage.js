@@ -64,3 +64,48 @@ export const GetUseriles = query({
         return result;
     }
 });
+
+// export const DeleteFile = mutation({
+//     args: {
+//         fileId: v.string(),
+//     },
+//     handler: async (ctx, args) => {
+//         try {
+//             // Delete the file from database
+//             await ctx.db.delete(args.fileId);
+//             return { success: true };
+//         } catch (error) {
+//             return { 
+//                 success: false, 
+//                 error: error.message 
+//             };
+//         }
+//     }
+// });
+
+export const DeleteFile = mutation({
+    args: {
+        fileId: v.string(),
+    },
+    handler: async (ctx, args) => {
+        try {
+            // Find the document by fileId
+            const fileRecord = await ctx.db.query("pdfFiles")
+                .filter((q) => q.eq(q.field("fileId"), args.fileId))
+                .first();  
+
+            if (!fileRecord) {
+                return { success: false, error: "File not found" };
+            }
+
+            // Delete the document using its _id
+            await ctx.db.delete(fileRecord._id);
+            return { success: true };
+        } catch (error) {
+            return { 
+                success: false, 
+                error: error.message 
+            };
+        }
+    }
+});
