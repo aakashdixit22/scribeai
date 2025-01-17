@@ -70,7 +70,8 @@ export function Features() {
     <div className="grid bg-transparent grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full px-6">
       <WobbleCard
         containerClassName="col-span-1 lg:col-span-2 h-full bg-slate-800 min-h-[500px] lg:min-h-[300px] relative overflow-hidden"
-        className="w-full h-full">
+        className="w-full h-full"
+      >
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="w-full md:w-1/2 p-6">
             <h2 className="text-left text-balance  text-2xl md:text-2xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
@@ -81,14 +82,20 @@ export function Features() {
               popular AI platform for developers.
             </p>
           </div>
-          <div className="w-full md:w-1/2 relative">
-            <Image
-              src="/linear.webp"
-              width={600}
-              height={600}
-              alt="linear demo image"
-              className="object-contain rounded-3xl w-full h-full"
-            />
+          <div className="w-full md:w-1/2 relative h-[300px]">
+            {" "}
+            {/* Added fixed height */}
+            <div className="relative w-full h-full rounded-3xl overflow-hidden">
+              {" "}
+              {/* Added wrapper with overflow */}
+              <Image
+                src="/linear.webp"
+                width={600}
+                height={600}
+                alt="linear demo image"
+                className="object-cover w-full h-full" /* Changed to object-cover */
+              />
+            </div>
           </div>
         </div>
       </WobbleCard>
@@ -106,7 +113,8 @@ export function Features() {
 
       <WobbleCard
         containerClassName="col-span-1 lg:col-span-3 bg-slate-800 min-h-[500px] lg:min-h-[300px] relative overflow-hidden"
-        className="w-full h-full">
+        className="w-full h-full"
+      >
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="w-full md:w-1/2 p-6">
             <h2 className="text-left text-balance text-2xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
@@ -118,14 +126,20 @@ export function Features() {
               popular AI platform for developers.
             </p>
           </div>
-          <div className="w-full md:w-1/2 relative">
-            <Image
-              src="/linear.webp"
-              width={700}
-              height={700}
-              alt="linear demo image"
-              className="object-contain rounded-3xl w-full h-full"
-            />
+          <div className="w-full md:w-1/2 relative h-[300px]">
+            {" "}
+            {/* Added fixed height */}
+            <div className="relative w-full h-full rounded-3xl overflow-hidden">
+              {" "}
+              {/* Added wrapper with overflow */}
+              <Image
+                src="/linear.webp"
+                width={600}
+                height={600}
+                alt="linear demo image"
+                className="object-cover w-full h-full" /* Changed to object-cover */
+              />
+            </div>
           </div>
         </div>
       </WobbleCard>
