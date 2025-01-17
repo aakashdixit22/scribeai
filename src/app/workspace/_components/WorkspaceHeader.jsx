@@ -35,7 +35,7 @@ function WorkspaceHeader({ fileName, fileId }) {
       {/* File Name - Fixed width, centered */}
       <div className="flex-1 max-w-md mx-4">
         <div className="px-3 py-1.5 border border-gray-600 rounded-lg bg-gray-800 shadow-sm">
-          <h1 className="text-md text-center font-semibold text-gray-300 truncate">
+          <h1 className="text-lg text-center font-semibold text-gray-300 truncate">
             {fileName || "Untitled Document"}
           </h1>
         </div>
