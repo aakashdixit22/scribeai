@@ -1,10 +1,9 @@
-// header.jsx
 import React from "react";
 import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
-import { Bell, Home, Smile, Menu } from "lucide-react";
+import { Home, Smile, Menu, SidebarOpen } from "lucide-react";
 import Link from "next/link";
 
-function Header({ onMenuClick, isSidebarOpen }) {
+function Header({ onMenuClick }) {
   const { user } = useUser();
 
   const toTitleCase = (str) => {
@@ -15,38 +14,41 @@ function Header({ onMenuClick, isSidebarOpen }) {
   };
 
   return (
-    <div className="flex items-center justify-between p-5 bg-gray-900 text-white shadow-md border-b border-gray-700">
-      {/* Left Section: Menu Button, Greeting Icon & Message */}
-      <div className="flex items-center gap-4">
-        <button 
-          onClick={onMenuClick}
-          className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
-        <Smile className="text-gray-400" size={24} />
-        <h2 className="text-lg font-semibold">
-          Welcome, {user?.firstName ? toTitleCase(user.firstName) : "Guest"}!
-        </h2>
-      </div>
-
-      {/* Right Section: Notifications, Home Icon & User Profile */}
-      <div className="flex items-center gap-5">
-        <button className="relative p-2 rounded-full hover:bg-gray-800 transition">
-          <Bell className="text-gray-400" size={22} />
-          {/* Notification Badge */}
-          <span className="absolute top-1 right-1 bg-red-600 text-xs text-white w-4 h-4 flex items-center justify-center rounded-full">
-            3
-          </span>
-        </button>
-
-        <Link href="/dashboard">
-          <button className="p-2 rounded-full hover:bg-gray-800 transition">
-            <Home className="text-gray-400" size={24} />
+    <div className="sticky top-0  bg-gray-900 border-b  border-gray-600">
+      <div className="flex items-center justify-between px-4 md:px-6 h-16">
+        {/* Left Section: Menu Button & Greeting */}
+        <div className="flex items-center gap-4">
+          <button 
+            onClick={onMenuClick}
+            className="md:hidden p-2 rounded-lg hover:bg-gray-700/80 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-700"
+          >
+            {/* <Menu className="h-5 w-5 text-gray-300" /> */}
+            <SidebarOpen className="h-6 w-6 text-gray-300" />
           </button>
-        </Link>
+          
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center w-8 h-8">
+              {/* <Smile className="text-gray-300 h-7 w-7" /> */}
+              <p className="text-2xl text-gray-300">👋</p>
+            </div>
+            <div className="flex flex-col">
+              <h2 className="text-sm font-medium text-gray-400">Welcome back,</h2>
+              <p className="text-lg font-semibold text-white">
+                {user?.firstName ? toTitleCase(user.firstName) : "Guest"}
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <SignOutButton signOutOptions={{redirectUrl: "/logout"}} >
+        {/* Right Section: Navigation & Actions */}
+        <div className="flex items-center gap-4">
+          <Link href="/">
+            <button className="p-2 rounded-lg text-gray-300 hover:bg-gray-700/80 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-700">
+              <Home className="h-6 w-6" />
+            </button>
+          </Link>
+
+          <SignOutButton signOutOptions={{redirectUrl: "/logout"}} >
           <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
             <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
               <span className="relative z-10 font-medium text-sm text-white">
@@ -55,6 +57,7 @@ function Header({ onMenuClick, isSidebarOpen }) {
             </div>
           </button>
         </SignOutButton>
+        </div>
       </div>
     </div>
   );
