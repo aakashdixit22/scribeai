@@ -1,9 +1,10 @@
+// header.jsx
 import React from "react";
 import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
-import { Bell, Home, Smile } from "lucide-react";
+import { Bell, Home, Smile, Menu } from "lucide-react";
 import Link from "next/link";
 
-function Header() {
+function Header({ onMenuClick, isSidebarOpen }) {
   const { user } = useUser();
 
   const toTitleCase = (str) => {
@@ -15,8 +16,14 @@ function Header() {
 
   return (
     <div className="flex items-center justify-between p-5 bg-gray-900 text-white shadow-md border-b border-gray-700">
-      {/* Left Section: Greeting Icon & Message */}
+      {/* Left Section: Menu Button, Greeting Icon & Message */}
       <div className="flex items-center gap-4">
+        <button 
+          onClick={onMenuClick}
+          className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors"
+        >
+          <Menu className="h-6 w-6" />
+        </button>
         <Smile className="text-gray-400" size={24} />
         <h2 className="text-lg font-semibold">
           Welcome, {user?.firstName ? toTitleCase(user.firstName) : "Guest"}!

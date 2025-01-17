@@ -1,7 +1,7 @@
-"use client"
+// sidebar.jsx
 import React from "react";
 import Image from "next/image";
-import { Layout, Shield } from "lucide-react";
+import { Layout, Shield, X } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import UploadPdf from "./UploadPdf";
 import { useUser } from "@clerk/nextjs";
@@ -10,7 +10,7 @@ import { api } from "../../../../convex/_generated/api";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-function SideBar() {
+function SideBar({ onClose }) {
   const { user } = useUser();
   const path = usePathname();
   const fileList = useQuery(api.fileStorage.GetUseriles, {
@@ -19,9 +19,19 @@ function SideBar() {
 
   return (
     <div className="shadow-md h-screen p-7 bg-gray-900 text-white relative flex flex-col border-r border-gray-700">
-      <div className="flex justify-center mb-6">
+      {/* Close button - visible only on mobile */}
+      <button 
+        onClick={onClose}
+        className="md:hidden absolute top-4 right-4 p-2 rounded-lg border hover:bg-gray-800 transition-colors"
+      >
+        <X className="h-6 w-6" />
+      </button>
+
+      <div className="flex border justify-center mb-6 mt-8 md:mt-0">
         <Image src={"/logo.svg"} alt="logo" width={150} height={150} />
       </div>
+
+      {/* Rest of your sidebar content remains the same */}
       <div className="mt-5 space-y-3 flex-1">
         <UploadPdf />
         <nav className="space-y-2">
@@ -47,6 +57,7 @@ function SideBar() {
           </Link>
         </nav>
       </div>
+
       <div className="mt-auto">
         <Progress value={(fileList?.length / 5) * 100} className="bg-gray-700" />
         <p className="text-xs text-gray-300 mt-2">
