@@ -1,5 +1,4 @@
-// sidebar.jsx
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Layout, Shield, X } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
@@ -13,9 +12,22 @@ import Link from "next/link";
 function SideBar({ onClose }) {
   const { user } = useUser();
   const path = usePathname();
+  const [showAlert, setShowAlert] = useState(false);
+  
   const fileList = useQuery(api.fileStorage.GetUseriles, {
     userEmail: user?.primaryEmailAddress?.emailAddress,
   });
+
+  const isUploadLimited = fileList?.length >= 5;
+
+  const handleWrapperClick = (e) => {
+    if (isUploadLimited) {
+      e.preventDefault();
+      e.stopPropagation();
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 5000);
+    }
+  };
 
   return (
     <div className="shadow-md h-screen p-7 bg-gray-900 text-white relative flex flex-col border-r border-gray-700">
@@ -31,9 +43,25 @@ function SideBar({ onClose }) {
         <Image src={"/logo.svg"} alt="logo" width={150} height={150} />
       </div>
 
-      {/* Rest of your sidebar content remains the same */}
+      {/* Custom Alert */}
+      {showAlert && (
+        <div className="mb-4 p-4 rounded-lg bg-gray-800 border border-gray-700 text-sm">
+          You've reached the maximum limit of 5 files. Please delete one or more files to continue uploading.
+        </div>
+      )}
+
+      {/* Rest of your sidebar content */}
       <div className="mt-5 space-y-3 flex-1">
-        <UploadPdf />
+        {/* Wrapper div around UploadPdf */}
+        <div 
+          onClick={handleWrapperClick}
+          className={`${isUploadLimited ? 'cursor-not-allowed' : ''}`}
+        >
+          <div className={isUploadLimited ? 'pointer-events-none opacity-50' : ''}>
+            <UploadPdf />
+          </div>
+        </div>
+        
         <nav className="space-y-2">
           <Link href="/dashboard">
             <div
@@ -59,7 +87,10 @@ function SideBar({ onClose }) {
       </div>
 
       <div className="mt-auto">
-        <Progress value={(fileList?.length / 5) * 100} className="bg-gray-700" />
+        <Progress 
+          value={(fileList?.length / 5) * 100} 
+          className="bg-gray-700"
+        />
         <p className="text-xs text-gray-300 mt-2">
           {fileList?.length} out of 5 PDFs uploaded
         </p>
