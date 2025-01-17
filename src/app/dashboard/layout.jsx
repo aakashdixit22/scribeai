@@ -8,10 +8,10 @@ function DashBoardLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex">
+    <div className="bg-gray-900 text-white h-[92vh] overflow-hidden flex">
       {/* Sidebar */}
       <div className={`
-        fixed inset-y-0 left-0 transform 
+        fixed top-0 left-0 h-full
         md:translate-x-0 md:static md:w-64
         transition-transform duration-300 ease-in-out
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
@@ -29,9 +29,9 @@ function DashBoardLayout({ children }) {
       )}
 
       {/* Main content */}
-      <div className="flex-1">
+      <div className="flex-1 flex flex-col min-h-screen">
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} isSidebarOpen={sidebarOpen} />
-        <div className="p-4">{children}</div>
+        <main className="flex-1 p-4 md:p-6 overflow-y-scroll">{children}</main>
       </div>
     </div>
   );
