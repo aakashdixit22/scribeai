@@ -18,7 +18,7 @@ function SideBar({ onClose }) {
   });
 
   return (
-    <div className="shadow-md h-[92vh] p-7 bg-gray-900 text-white relative flex flex-col border-r border-gray-700">
+    <div className="shadow-md h-screen p-7 bg-gray-900 text-white relative flex flex-col border-r border-gray-700">
       {/* Close button - visible only on mobile */}
       <button 
         onClick={onClose}

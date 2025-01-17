@@ -8,7 +8,7 @@ function DashBoardLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="bg-gray-900 text-white h-[92vh] overflow-hidden flex">
+    <div className="bg-gray-900 text-white h-screen overflow-hidden flex">
       {/* Sidebar */}
       <div className={`
         fixed top-0 left-0 h-full
