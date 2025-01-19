@@ -2,7 +2,8 @@ import { useAction, useMutation } from "convex/react";
 import {
   Bold, Italic, Sparkles, Underline, Code, List,
   AlignLeft, AlignCenter, AlignRight, Highlighter,
-  Heading1, Heading2, Heading3
+  Heading1, Heading2, Heading3, FileDown,
+  FileText
 } from "lucide-react";
 import React from "react";
 import { api } from "@/../convex/_generated/api";
@@ -47,6 +48,55 @@ function EditorExtension({ editor, fileId }) {
     });
 
     toast("AI response added to the editor.");
+  };
+
+  const downloadAsPDF = async () => {
+    try {
+      const content = editor.getHTML();
+      // Create a temporary element to render the HTML
+      const element = document.createElement('div');
+      element.innerHTML = content;
+      
+      // Convert to PDF using html2pdf (you'll need to add this dependency)
+      const html2pdf = (await import('html2pdf.js')).default;
+      const opt = {
+        margin: 1,
+        filename: 'document.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      
+      html2pdf().set(opt).from(element).save();
+      toast("PDF download started");
+    } catch (error) {
+      toast.error("Error downloading PDF");
+      console.error("PDF download error:", error);
+    }
+  };
+
+  const downloadAsDocx = async () => {
+    try {
+      const content = editor.getHTML();
+      // Convert HTML to DOCX using html-docx-js (you'll need to add this dependency)
+      const htmlDocx = await import('html-docx-js/dist/html-docx');
+      const converted = htmlDocx.asBlob(content);
+      
+      // Create download link
+      const url = window.URL.createObjectURL(converted);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'document.docx';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      
+      toast("DOCX download started");
+    } catch (error) {
+      toast.error("Error downloading DOCX");
+      console.error("DOCX download error:", error);
+    }
   };
 
   editor.on('update', () => {
@@ -138,9 +188,36 @@ function EditorExtension({ editor, fileId }) {
       </button>
 
       {/* AI Assistant */}
-      <button onClick={onAiClick} className="p-2 rounded-md hover:text-blue-500 hover:bg-gray-700 transition">
+      <button 
+        onClick={onAiClick} 
+        className="p-2 rounded-md hover:text-blue-500 hover:bg-gray-700 transition"
+      >
         <Sparkles />
       </button>
+
+      {/* Download Buttons */}
+      <button
+  onClick={downloadAsPDF}
+  className="p-2 rounded-md hover:bg-gray-700 transition text-gray-300 relative group"
+  title="Download as PDF"
+>
+  <img 
+    src='/pdfSvg.svg' 
+    alt="PDF" 
+    className="w-7 h-7 hover:opacity-80 transition"
+  />
+</button>
+<button
+  onClick={downloadAsDocx}
+  className="p-2 rounded-md hover:bg-gray-700 transition text-gray-300 relative group"
+  title="Download as DOCX"
+>
+  <img 
+    src='/wordSvg.svg' 
+    alt="DOCX" 
+    className="w-7 h-7 hover:opacity-80 transition"
+  />
+</button>
     </div>
   );
 }
