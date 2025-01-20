@@ -80,9 +80,11 @@ const Hero = () => {
               </h1>
 
               <p className="text-lg text-slate-300">
-                Transform your PDFs into interactive knowledge bases. Ask
-                questions, get insights, and create smart StickyNote powered by
-                cutting-edge AI technology.
+                Upload your PDFs and transform them into dynamic, AI-driven
+                knowledge hubs. Ask precise questions, generate insightful
+                notes, and explore content with unparalleled efficiency.
+                Experience the power of AI-enhanced learning and productivity
+                today!
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
@@ -125,7 +127,6 @@ const Hero = () => {
                 {/* Split view */}
                 <div className="grid flex-1 grid-cols-2 gap-4 overflow-hidden rounded-lg bg-slate-900/30">
                   {/* PDF preview side */}
-                  
 
                   {/* Notes & AI assistance side */}
                   <div className="flex flex-col">
