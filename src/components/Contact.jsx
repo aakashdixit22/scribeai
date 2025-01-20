@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Contact = () => {
   return (
@@ -8,12 +8,33 @@ const Contact = () => {
           Contact Us
         </h2>
         <p className="mb-12 font-light text-center text-gray-400 sm:text-xl max-w-2xl mx-auto">
-          Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.
+          Transform your PDFs with AI-powered notes and summaries. Need help
+          with document analysis? Want to learn about advanced features? Have
+          suggestions for improvements? Our support team is ready to assist you.
         </p>
-        
+
         <form action="#" className="space-y-6">
+        <div>
+            <label
+              className="block mb-2 text-md font-medium text-gray-300"
+            >
+              Your Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              className="w-full p-3 text-md rounded-lg border border-gray-600 bg-gray-700/50 text-white placeholder-gray-400
+                focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                transition-all duration-200 ease-in-out"
+              placeholder="Your Name"
+              required
+            />
+          </div>
           <div>
-            <label htmlFor="email" className="block mb-2 text-md font-medium text-gray-300">
+            <label
+              htmlFor="email"
+              className="block mb-2 text-md font-medium text-gray-300"
+            >
               Your email
             </label>
             <input
@@ -22,28 +43,18 @@ const Contact = () => {
               className="w-full p-3 text-md rounded-lg border border-gray-600 bg-gray-700/50 text-white placeholder-gray-400
                 focus:ring-2 focus:ring-blue-500 focus:border-transparent
                 transition-all duration-200 ease-in-out"
-              placeholder="name@company.com"
+              placeholder="name@xyz.com"
               required
             />
           </div>
+
           
+
           <div>
-            <label htmlFor="subject" className="block mb-2 text-md font-medium text-gray-300">
-              Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              className="w-full p-3 text-md rounded-lg border border-gray-600 bg-gray-700/50 text-white placeholder-gray-400
-                focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                transition-all duration-200 ease-in-out"
-              placeholder="Let us know how we can help you"
-              required
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="message" className="block mb-2 text-md font-medium text-gray-300">
+            <label
+              htmlFor="message"
+              className="block mb-2 text-md font-medium text-gray-300"
+            >
               Your message
             </label>
             <textarea
@@ -56,15 +67,15 @@ const Contact = () => {
               required
             />
           </div>
-          
+
           <div className="flex justify-center mt-8">
-          <button className=" group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
-                  <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
-                    <span className="relative z-10 font-medium text-sm text-white">
-                      Send Message
-                    </span>
-                  </div>
-                </button>
+            <button className=" group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+              <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
+                <span className="relative z-10 font-medium text-sm text-white">
+                  Send Message
+                </span>
+              </div>
+            </button>
           </div>
         </form>
       </div>
