@@ -9,16 +9,21 @@ const About = () => {
             <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
               <div className="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
                 <h2 className="text-white text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
-                  Empowering Knowledge with AI-Driven Insights
+                  Unlock the Power of AI for Smarter Note-Taking
                 </h2>
                 <p className="text-white text-base font-normal leading-relaxed lg:text-start text-center">
-                  We believe in simplifying the way you interact with information.  
-                  Using state-of-the-art AI, our platform transforms your PDFs into  
-                  dynamic learning resources. Whether it’s extracting insights,  
-                  generating organized notes, or answering complex questions,  
-                  we make it effortless to understand and retain knowledge.  
-                  Join us on this journey to redefine how you learn and work.
+                  Welcome to ScribeAI, the ultimate platform for turning static PDFs into dynamic, interactive learning resources. 
+                  Designed for students, professionals, and lifelong learners, ScribeAI combines cutting-edge AI technology with 
+                  user-friendly tools to simplify how you interact with information.
                 </p>
+                <p className="text-white text-base font-normal leading-relaxed lg:text-start text-center">
+                  Upload your PDFs and experience a whole new way of managing content. With our advanced text editor, 
+                  you can effortlessly create, format, and customize notes. From bold and italicized text to headings, code blocks, 
+                  and more, our editor is tailored to suit your unique needs. What truly sets us apart is our AI-powered note creation. 
+                  Ask questions related to your PDFs directly in the editor, and let our intelligent system provide precise, 
+                  context-driven answers to help you grasp complex concepts with ease.
+                </p>
+                
               </div>
               <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
                 <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
@@ -31,7 +36,7 @@ const About = () => {
             <img
               className="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
               src="/aboutImg.png"
-              alt="About Us Image"
+              alt="About ScribeAI"
             />
           </div>
         </div>

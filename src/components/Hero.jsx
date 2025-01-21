@@ -41,7 +41,16 @@ const Hero = () => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
-
+  const handleAboutClick = (e, sectionId) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentStep((prev) => (prev + 1) % 3);
@@ -96,8 +105,11 @@ const Hero = () => {
                   </div>
                 </button>
 
-                <button className="group flex items-center gap-2 rounded-lg border border-slate-700 px-6 py-3 text-white transition-all hover:border-g">
-                  <span>Watch Demo</span>
+                <button
+                  onClick={(e) => handleAboutClick(e, "about")}
+                  className="group flex items-center gap-2 rounded-lg border border-slate-700 px-6 py-3 text-white transition-all hover:border-g"
+                >
+                  <span>About ScribeAI</span>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>

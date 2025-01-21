@@ -174,7 +174,7 @@ const DeveloperSection = () => {
     <section className="py-12 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold bg-white bg-clip-text text-transparent pb-4">
+          <h2 className="text-4xl font-bold bg-white bg-clip-text text-transparent pb-4">
             Developers
           </h2>
         </div>
