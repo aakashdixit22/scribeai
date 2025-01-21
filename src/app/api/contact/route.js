@@ -163,7 +163,7 @@ export async function POST(req) {
         <body>
           <div class="container">
             <div class="header">
-              <div class="logo">📬 New Message on ScholarAI</div>
+              <div class="logo">📬 New Message on ScribeAI</div>
               <div class="subtitle">Contact Form Submission</div>
             </div>
             

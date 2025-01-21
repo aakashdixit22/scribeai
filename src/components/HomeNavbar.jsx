@@ -35,9 +35,9 @@ export default function HomeNavbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo Section */}
         <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Logo" />
+          <img src="/logo.png" className="h-10" alt="Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            YourLogo
+            ScribeAI
           </span>
         </a>
         
@@ -45,9 +45,15 @@ export default function HomeNavbar() {
         <div className="flex md:order-2 items-center space-x-4">
           <div className="w-[120px] flex justify-center items-center">
             {user ? (
-              <div className="flex items-center justify-center h-10">
-                <UserButton afterSignOutUrl="/" />
-              </div>
+              <Link href="/dashboard" className="w-full flex justify-center">
+                <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+                  <div className="relative rounded-lg bg-slate-800 px-4 py-2 transition-colors group-hover:bg-slate-600">
+                    <span className="relative text-sm z-10 font-medium text-white">
+                      Dashboard
+                    </span>
+                  </div>
+                </button>
+              </Link>
             ) : (
               <Link href="/sign-in" className="w-full flex justify-center">
                 <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">

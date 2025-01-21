@@ -171,7 +171,7 @@ const DeveloperSection = () => {
   ];
 
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-12 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold bg-white bg-clip-text text-transparent pb-4">

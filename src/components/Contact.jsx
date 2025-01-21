@@ -47,7 +47,7 @@ const Contact = () => {
   return (
     <section className="bg-transparent">
       <div className="py-12 lg:py-20 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-6 text-4xl md:text-5xl tracking-tight font-extrabold text-center text-white">
+        <h2 className="mb-6 text-4xl md:text-5xl tracking-tight font-bold text-center text-white">
           Contact Us
         </h2>
         <p className="mb-12 font-light text-center text-gray-400 sm:text-xl max-w-2xl mx-auto">
