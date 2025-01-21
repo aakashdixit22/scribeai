@@ -51,7 +51,7 @@ const Footer = () => {
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.id)}
-                  className="mr-4 hover:underline md:mr-6 transition-colors duration-200 hover:text-slate-300"
+                  className="mr-4  md:mr-6 transition-colors duration-200 hover:text-slate-500"
                 >
                   {link.label}
                 </a>

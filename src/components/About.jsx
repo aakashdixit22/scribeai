@@ -8,7 +8,7 @@ const About = () => {
           <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
             <div className="w-full flex-col justify-start lg:items-start items-center gap-10 inline-flex">
               <div className="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
-                <h2 className="text-white text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                <h2 className="text-white text-5xl font-bold font-manrope leading-normal lg:text-start text-center">
                   Unlock the Power of AI for Smarter Note-Taking
                 </h2>
                 <p className="text-white text-base font-normal leading-relaxed lg:text-start text-center">
@@ -25,13 +25,7 @@ const About = () => {
                 </p>
                 
               </div>
-              <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
-                <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
-                  <span className="relative z-10 font-medium text-sm text-white">
-                    Learn More
-                  </span>
-                </div>
-              </button>
+              
             </div>
             <img
               className="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
