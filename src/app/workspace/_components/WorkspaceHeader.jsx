@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 import { api } from "../../../../convex/_generated/api";
 import { useNotes } from "@/lib/context";
 import { SignOutButton } from "@clerk/nextjs";
-// Import Lucide Icons
 import {
   HomeIcon,
   GridIcon,
@@ -23,7 +22,6 @@ function WorkspaceHeader({ fileName, fileId }) {
   const [loading, setLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Function to handle saving notes
   const handleSave = async () => {
     setLoading(true);
     await saveNotes({
@@ -35,8 +33,7 @@ function WorkspaceHeader({ fileName, fileId }) {
     showToast("File saved successfully!");
   };
 
-  // Function to show toast notification
-    const showToast = (message, type = 'success') => {
+  const showToast = (message, type = 'success') => {
     const toast = document.createElement('div');
     
     toast.className = `
@@ -45,9 +42,7 @@ function WorkspaceHeader({ fileName, fileId }) {
       flex items-center gap-3
       min-w-[300px] max-w-[90vw]
       px-4 py-3 rounded-lg
-      ${type === 'success' 
-        ? 'bg-emerald-500/95 text-white' 
-        : 'bg-red-500/95 text-white'} 
+      ${type === 'success' ? 'bg-emerald-500/95 text-white' : 'bg-red-500/95 text-white'} 
       shadow-lg z-50
       transition-all duration-300 ease-out
     `;
@@ -64,7 +59,6 @@ function WorkspaceHeader({ fileName, fileId }) {
   
     document.body.appendChild(toast);
   
-    // Animate out and remove
     setTimeout(() => {
       toast.style.opacity = '0';
       toast.style.transform = 'translateX(100%)';
@@ -72,35 +66,35 @@ function WorkspaceHeader({ fileName, fileId }) {
     }, 3000);
   };
 
-  // Close the menu when the screen is resized larger than sm breakpoint
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 640 && menuOpen) { // 640px is the sm breakpoint in Tailwind CSS
+      if (window.innerWidth >= 1024 && menuOpen) { // Changed to 1024px (lg breakpoint)
         setMenuOpen(false);
       }
     };
 
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, [menuOpen]);
 
   return (
     <div className="h-16 px-4 flex items-center justify-between bg-gray-900 text-white border-b border-gray-700 relative">
-      {/* Logo */}
-      <div className="w-[120px] hidden sm:flex items-center">
-        <Image
-          src="/logo.svg"
-          alt="logo"
-          width={120}
-          height={80}
-          className="h-8 w-auto"
-        />
+      {/* Logo - Only visible on lg screens */}
+            <div className="w-[160px] hidden sm:flex items-center"> {/* Changed from lg:flex to sm:flex */}
+        <div className="flex items-center gap-2"> {/* Reduced gap from 3 to 2 */}
+          <img 
+            src="/logo.png" 
+            
+            className="h-8 sm:h-8"
+            alt="ScribeAI Logo" 
+          />
+          <span className="text-2xl sm:text-xl font-semibold truncate text-white">
+            ScribeAI
+          </span>
+        </div>
       </div>
 
-      {/* File Name - Fixed width, centered */}
+      {/* File Name */}
       <div className="flex-1 max-w-md mx-4">
         <div className="px-3 py-1.5 border border-gray-600 rounded-lg bg-gray-800 shadow-sm">
           <h1 className="text-lg text-center font-semibold text-gray-300 truncate">
@@ -109,7 +103,7 @@ function WorkspaceHeader({ fileName, fileId }) {
         </div>
       </div>
 
-      {/* Actions Group - Right aligned */}
+      {/* Actions Group */}
       <div className="flex items-center space-x-3">
         <button
           onClick={handleSave}
@@ -129,32 +123,33 @@ function WorkspaceHeader({ fileName, fileId }) {
           </div>
         </button>
 
-        {/* Hamburger Menu */}
-        <button className="sm:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+        {/* Hamburger Menu - Visible below lg screens */}
+        <button className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <XIcon className="w-6 h-6 text-white" /> : <MenuIcon className="w-6 h-6 text-white" />}
         </button>
 
-        {/* Dropdown Menu for Smaller Screens */}
+        {/* Dropdown Menu */}
         {menuOpen && (
           <div className="absolute right-4 top-16 bg-gray-800 rounded-lg shadow-md p-2 z-50">
             <Link href="/dashboard">
-            <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px] block w-full text-left mb-2" >
-              <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
-                <GridIcon className="w-4 h-4 text-white" />
-                <span className="text-sm text-white">Dashboard</span>
-              </div>
-            </button>
+              <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px] block w-full text-left mb-2">
+                <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
+                  <GridIcon className="w-4 h-4 text-white" />
+                  <span className="text-sm text-white">Dashboard</span>
+                </div>
+              </button>
             </Link>
 
             <Link href="/">
-            <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px] block w-full text-left mb-2">
-              <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
-                <HomeIcon className="w-4 h-4 text-white" />
-                <span className="text-sm text-white">Home</span>
-              </div>
-            </button>
+              <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px] block w-full text-left mb-2">
+                <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
+                  <HomeIcon className="w-4 h-4 text-white" />
+                  <span className="text-sm text-white">Home</span>
+                </div>
+              </button>
             </Link>
-            <div className="block sm:hidden">
+
+            <div className="block lg:hidden">
               <SignOutButton signOutOptions={{ redirectUrl: "/logout" }}>
                 <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px] block w-full text-left">
                   <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
@@ -167,27 +162,27 @@ function WorkspaceHeader({ fileName, fileId }) {
           </div>
         )}
 
-        {/* Buttons for Larger Screens */}
-        <div className="hidden sm:flex items-center space-x-3">
-         <Link href="/dashboard">
-          <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
-            <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
-              <GridIcon className="w-4 h-4 text-white" />
-              <span className="text-sm text-white">Dashboard</span>
-            </div>
-          </button>
+        {/* Desktop Navigation - Only visible on lg screens */}
+        <div className="hidden lg:flex items-center space-x-3">
+          <Link href="/dashboard">
+            <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+              <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
+                <GridIcon className="w-4 h-4 text-white" />
+                <span className="text-sm text-white">Dashboard</span>
+              </div>
+            </button>
           </Link>
+
           <Link href="/">
-
-          <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]" >
-            <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
-              <HomeIcon className="w-4 h-4 text-white" />
-              <span className="text-sm text-white">Home</span>
-            </div>
-          </button>
+            <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+              <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
+                <HomeIcon className="w-4 h-4 text-white" />
+                <span className="text-sm text-white">Home</span>
+              </div>
+            </button>
           </Link>
 
-          <div className="hidden sm:block">
+          <div className="hidden lg:block">
             <SignOutButton signOutOptions={{ redirectUrl: "/logout" }}>
               <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
                 <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">

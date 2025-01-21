@@ -104,29 +104,29 @@ function EditorExtension({ editor, fileId }) {
   });
 
   return (
-    <div className="flex flex-wrap gap-3 bg-gray-800 rounded-md">
+    <div className="flex flex-wrap gap-1.5 bg-gray-800 rounded-md">
       {/* Text Formatting */}
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("bold") ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("bold") ? "text-blue-500" : "text-gray-300"}`}
       >
         <Bold />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("italic") ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("italic") ? "text-blue-500" : "text-gray-300"}`}
       >
         <Italic />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleUnderline().run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("underline") ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("underline") ? "text-blue-500" : "text-gray-300"}`}
       >
         <Underline />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCode().run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("code") ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("code") ? "text-blue-500" : "text-gray-300"}`}
       >
         <Code />
       </button>
@@ -134,7 +134,7 @@ function EditorExtension({ editor, fileId }) {
       {/* Lists */}
       <button
         onClick={() => editor.chain().focus().toggleBulletList().run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("bulletList") ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("bulletList") ? "text-blue-500" : "text-gray-300"}`}
       >
         <List />
       </button>
@@ -142,19 +142,19 @@ function EditorExtension({ editor, fileId }) {
       {/* Text Alignment */}
       <button
         onClick={() => editor.chain().focus().setTextAlign("left").run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive({ textAlign: "left" }) ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive({ textAlign: "left" }) ? "text-blue-500" : "text-gray-300"}`}
       >
         <AlignLeft />
       </button>
       <button
         onClick={() => editor.chain().focus().setTextAlign("center").run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive({ textAlign: "center" }) ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive({ textAlign: "center" }) ? "text-blue-500" : "text-gray-300"}`}
       >
         <AlignCenter />
       </button>
       <button
         onClick={() => editor.chain().focus().setTextAlign("right").run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive({ textAlign: "right" }) ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive({ textAlign: "right" }) ? "text-blue-500" : "text-gray-300"}`}
       >
         <AlignRight />
       </button>
@@ -162,19 +162,19 @@ function EditorExtension({ editor, fileId }) {
       {/* Headings */}
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("heading", { level: 1 }) ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("heading", { level: 1 }) ? "text-blue-500" : "text-gray-300"}`}
       >
         <Heading1 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("heading", { level: 2 }) ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("heading", { level: 2 }) ? "text-blue-500" : "text-gray-300"}`}
       >
         <Heading2 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("heading", { level: 3 }) ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("heading", { level: 3 }) ? "text-blue-500" : "text-gray-300"}`}
       >
         <Heading3 />
       </button>
@@ -182,7 +182,7 @@ function EditorExtension({ editor, fileId }) {
       {/* Highlight */}
       <button
         onClick={() => editor.chain().focus().toggleHighlight().run()}
-        className={`p-2 rounded-md hover:bg-gray-700 transition ${editor.isActive("highlight") ? "text-blue-500" : "text-gray-300"}`}
+        className={`p-1 rounded-md hover:bg-gray-700 transition ${editor.isActive("highlight") ? "text-blue-500" : "text-gray-300"}`}
       >
         <Highlighter />
       </button>
@@ -190,7 +190,7 @@ function EditorExtension({ editor, fileId }) {
       {/* AI Assistant */}
       <button 
         onClick={onAiClick} 
-        className="p-2 rounded-md hover:text-blue-500 hover:bg-gray-700 transition"
+        className="p-1 rounded-md hover:text-blue-500 hover:bg-gray-700 transition"
       >
         <Sparkles />
       </button>
@@ -198,7 +198,7 @@ function EditorExtension({ editor, fileId }) {
       {/* Download Buttons */}
       <button
   onClick={downloadAsPDF}
-  className="p-2 rounded-md hover:bg-gray-700 transition text-gray-300 relative group"
+  className="p-1 rounded-md hover:bg-gray-700 transition text-gray-300 relative group"
   title="Download as PDF"
 >
   <img 
@@ -209,7 +209,7 @@ function EditorExtension({ editor, fileId }) {
 </button>
 <button
   onClick={downloadAsDocx}
-  className="p-2 rounded-md hover:bg-gray-700 transition text-gray-300 relative group"
+  className="p-1 rounded-md hover:bg-gray-700 transition text-gray-300 relative group"
   title="Download as DOCX"
 >
   <img 
