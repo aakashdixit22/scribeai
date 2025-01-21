@@ -35,7 +35,7 @@ export default function HomeNavbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo Section */}
         <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/logo.png" className="h-10" alt="Logo" />
+          <img src="/logo.png" className="h-8" alt="Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             ScribeAI
           </span>

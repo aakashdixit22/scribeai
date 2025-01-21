@@ -51,12 +51,9 @@ const PricingPage = () => {
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
         <div className="text-center space-y-4 mb-8 sm:mb-12">
-          <div className="flex items-center justify-center gap-2">
-            <Sparkles className="h-5 w-5 text-yellow-400" />
-            <span className="text-indigo-400">New Features Available</span>
-          </div>
           
-          <h1 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">
+          
+          <h1 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500">
             Choose your perfect plan
           </h1>
           
@@ -70,14 +67,14 @@ const PricingPage = () => {
             </span>
             <button
               onClick={() => setIsYearly(!isYearly)}
-              className="relative w-14 h-7 rounded-full bg-indigo-600/20"
+              className="relative w-14 h-7 rounded-full bg-slate-800"
             >
-              <span className={`absolute left-1 top-1 h-5 w-5 rounded-full bg-indigo-600 transition-transform duration-300 ${
+              <span className={`absolute left-1 top-1 h-5 w-5 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 transition-transform duration-300 ${
                 isYearly ? 'translate-x-7' : ''
               }`} />
             </button>
             <span className={`px-4 py-2 ${isYearly ? 'text-white' : 'text-gray-400'}`}>
-              Yearly <span className="text-sm text-indigo-400">Save 20%</span>
+              Yearly <span className="text-sm text-teal-400">Save 20%</span>
             </span>
           </div>
         </div>
@@ -88,8 +85,8 @@ const PricingPage = () => {
               key={plan.name}
               className={`flex flex-col h-full relative rounded-3xl p-8 transition-all duration-300 hover:scale-105 ${
                 plan.isPopular 
-                  ? 'bg-gradient-to-b from-indigo-600 to-violet-600 text-white shadow-xl'
-                  : 'bg-gray-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl'
+                  ? 'bg-gradient-to-b text-black  from-emerald-500 via-teal-500 to-cyan-500  shadow-xl'
+                  : 'bg-slate-800 backdrop-blur-sm shadow-lg hover:shadow-xl'
               }`}
             >
               {plan.isPopular && (
@@ -101,12 +98,12 @@ const PricingPage = () => {
               <div className="flex-1">
                 <div className="mb-8">
                   <h3 className="text-2xl font-bold">{plan.name}</h3>
-                  <p className="mt-2 text-gray-300">{plan.description}</p>
+                  <p className="mt-2 ">{plan.description}</p>
                   <div className="mt-6 flex items-baseline">
                     <span className="text-5xl font-bold">
                       ${isYearly ? plan.price.yearly : plan.price.monthly}
                     </span>
-                    <span className="ml-2 text-gray-300">
+                    <span className="ml-2 ">
                       /{isYearly ? 'year' : 'month'}
                     </span>
                   </div>
@@ -115,8 +112,8 @@ const PricingPage = () => {
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-indigo-400" />
-                      <span className="text-gray-300">{feature}</span>
+                      <Check className="h-5 w-5" />
+                      <span className="">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -125,8 +122,8 @@ const PricingPage = () => {
               <button
                 className={`w-full rounded-2xl px-4 py-4 text-center font-medium transition-all duration-300 ${
                   plan.isPopular
-                    ? 'bg-white text-indigo-600 hover:bg-gray-50'
-                    : 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white hover:opacity-90'
+                    ? 'bg-white text-black hover:bg-gray-50'
+                    : 'bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white hover:opacity-90'
                 }`}
               >
                 Get started

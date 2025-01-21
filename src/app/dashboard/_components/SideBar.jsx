@@ -34,21 +34,22 @@ function SideBar({ onClose }) {
       {/* Close button - visible only on mobile */}
       <button 
         onClick={onClose}
-        className="md:hidden absolute top-4 right-4 p-2 rounded-full hover:bg-gray-700/80 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-700"
+        className="md:hidden absolute top-3 right-2 rounded-full hover:bg-gray-700/80 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-700"
       >
         {/* <X className="h-5 w-5" /> */}
         <SidebarClose className="h-6 w-6 text-gray-300" />
       </button>
 
-      <div className="flex justify-center px-6 py-8 md:py-6">
-        <div className="relative w-32 h-12">
-          <Image 
-            src="/logo.svg" 
-            alt="logo" 
-            fill 
-            className="object-contain"
-            priority
+            <div className="flex justify-center px-6 pt-8 pb-4 md:py-6">
+        <div className="flex items-center space-x-2">
+          <img 
+            src="/logo.png" 
+            className="h-8" 
+            alt="ScribeAI Logo" 
           />
+          <span className="text-2xl font-semibold self-center whitespace-nowrap text-white">
+            ScribeAI
+          </span>
         </div>
       </div>
 
