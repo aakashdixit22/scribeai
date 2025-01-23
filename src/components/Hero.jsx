@@ -11,6 +11,7 @@ import {
   ChevronDown,
   PenLine,
 } from "lucide-react";
+import Link from "next/link";
 
 // Custom floating animation component
 const FloatingElement = ({ children, delay = 0, className = "" }) => {
@@ -97,6 +98,7 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+              <Link href="/dashboard">
                 <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
                   <div className="relative rounded-lg bg-slate-800 px-6 py-3 transition-colors group-hover:bg-slate-600">
                     <span className="relative z-10 font-medium text-white">
@@ -104,6 +106,7 @@ const Hero = () => {
                     </span>
                   </div>
                 </button>
+              </Link>
 
                 <button
                   onClick={(e) => handleAboutClick(e, "about")}

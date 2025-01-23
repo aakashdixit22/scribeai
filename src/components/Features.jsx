@@ -12,19 +12,19 @@ export function Features() {
       >
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="w-full md:w-1/2 p-6">
-            <h2 className="text-left text-balance text-2xl md:text-2xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+            <h2 className="text-left text-balance text-xl md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white">
               Revolutionizing Learning and Productivity with AI
             </h2>
-            <p className="mt-4 text-left text-base/6 text-neutral-200">
+            <p className="mt-4 text-left text-md text-neutral-200">
               At ScribeAI, we are committed to transforming the way you engage with your documents. Whether it's simplifying 
               complex material, extracting insights, or turning your PDFs into dynamic and digestible notes, our platform ensures 
               every user gets the most out of their resources. 
             </p>
             
           </div>
-          <div className="w-full md:w-1/2 relative h-[300px]">
+          <div className="w-full md:w-1/2 relative h-[250px]">
             {/* Added fixed height */}
-            <div className="relative w-full h-full rounded-3xl overflow-hidden">
+            <div className="relative w-full h-full overflow-hidden">
               {/* Added wrapper with overflow */}
               <Image
                 src="/demo1.png"
@@ -39,10 +39,10 @@ export function Features() {
 
       <WobbleCard containerClassName="col-span-1 bg-slate-800 min-h-[300px]">
         <div className="p-6">
-          <h2 className="max-w-80 text-left text-balance text-2xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+          <h2 className="max-w-80 text-left text-balance text-xl md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white">
           Join the Revolution with ScribeAI
           </h2>
-          <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+          <p className="mt-4 max-w-[26rem] text-left text-md text-neutral-200">
           With thousands of users already benefiting from our platform, ScribeAI is quickly becoming the go-to solution 
               for AI-assisted document processing. Whether you're a researcher, student, or professional, our innovative tools 
               are designed to save you time, reduce stress, and help you work smarter.
@@ -56,19 +56,19 @@ export function Features() {
       >
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="w-full md:w-1/2 p-6">
-            <h2 className="text-left text-balance text-2xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+            <h2 className="text-left text-balance text-xl md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white">
               A Powerful Platform to Enhance Your Workflow
             </h2>
-            <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+            <p className="mt-4 max-w-[26rem] text-left text-md text-neutral-200">
               Say goodbye to outdated and clunky note-making tools. ScribeAI brings you a modern, feature-rich text editor that 
             allows for bold, italics, headings, and even code blocks. Effortlessly organize your thoughts, create detailed 
             summaries, and customize your notes to fit your unique workflow.
             </p>
             
           </div>
-          <div className="w-full md:w-1/2 relative h-[300px]">
+          <div className="w-full md:w-1/2 relative h-[250px]">
             {/* Added fixed height */}
-            <div className="relative w-full h-full rounded-3xl overflow-hidden">
+            <div className="relative w-full h-full  overflow-hidden">
               {/* Added wrapper with overflow */}
               <Image
                 src="/demo2.png"
