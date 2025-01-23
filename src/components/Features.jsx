@@ -27,11 +27,10 @@ export function Features() {
             <div className="relative w-full h-full rounded-3xl overflow-hidden">
               {/* Added wrapper with overflow */}
               <Image
-                src="/linear.webp"
-                width={600}
-                height={600}
+                src="/demo1.png"
+                fill
                 alt="ScribeAI in action"
-                className="object-cover w-full h-full" /* Changed to object-cover */
+                className="object-contain w-full h-full" /* Changed to object-cover */
               />
             </div>
           </div>
@@ -72,11 +71,10 @@ export function Features() {
             <div className="relative w-full h-full rounded-3xl overflow-hidden">
               {/* Added wrapper with overflow */}
               <Image
-                src="/linear.webp"
-                width={600}
-                height={600}
+                src="/demo2.png"
+                fill
                 alt="ScribeAI demo in action"
-                className="object-cover w-full h-full" /* Changed to object-cover */
+                className="object-contain w-full h-full" /* Changed to object-cover */
               />
             </div>
           </div>
