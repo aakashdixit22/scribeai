@@ -1,65 +1,3 @@
-// "use client";
-// import Image from "next/image";
-// import React from "react";
-// import { WobbleCard } from "./ui/wobble-card";
-
-// export function WobbleCardDemo() {
-//   return (
-//     (<div
-//       className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
-//       <WobbleCard
-//         containerClassName="col-span-1 lg:col-span-2 h-full bg-gray-800 min-h-[500px] lg:min-h-[300px]"
-//         className="">
-//         <div className="max-w-xs">
-//           <h2
-//             className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-//             Gippity AI powers the entire universe
-//           </h2>
-//           <p className="mt-4 text-left  text-base/6 text-neutral-200">
-//             With over 100,000 mothly active bot users, Gippity AI is the most
-//             popular AI platform for developers.
-//           </p>
-//         </div>
-//         <Image
-//           src="/linear.webp"
-//           width={500}
-//           height={500}
-//           alt="linear demo image"
-//           className="absolute -right-2 lg:-right-[10%] grayscale filter -bottom-5 object-contain rounded-2xl" />
-//       </WobbleCard>
-//       <WobbleCard containerClassName="col-span-1 min-h-[300px]">
-//         <h2
-//           className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-//           No shirt, no shoes, no weapons.
-//         </h2>
-//         <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-//           If someone yells “stop!”, goes limp, or taps out, the fight is over.
-//         </p>
-//       </WobbleCard>
-//       <WobbleCard
-//         containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
-//         <div className="max-w-sm">
-//           <h2
-//             className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-//             Signup for blazing-fast cutting-edge state of the art Gippity AI
-//             wrapper today!
-//           </h2>
-//           <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-//             With over 100,000 mothly active bot users, Gippity AI is the most
-//             popular AI platform for developers.
-//           </p>
-//         </div>
-//         <Image
-//           src="/linear.webp"
-//           width={500}
-//           height={500}
-//           alt="linear demo image"
-//           className="absolute -right-2 md:-right-[5%] lg:-right-[1%] -bottom-1 object-contain rounded-2xl" />
-//       </WobbleCard>
-//     </div>)
-//   );
-// }
-
 "use client";
 import Image from "next/image";
 import React from "react";
@@ -74,25 +12,25 @@ export function Features() {
       >
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="w-full md:w-1/2 p-6">
-            <h2 className="text-left text-balance  text-2xl md:text-2xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-              Gippity AI powers the entire universe
+            <h2 className="text-left text-balance text-2xl md:text-2xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+              Revolutionizing Learning and Productivity with AI
             </h2>
             <p className="mt-4 text-left text-base/6 text-neutral-200">
-              With over 100,000 mothly active bot users, Gippity AI is the most
-              popular AI platform for developers.
+              At ScribeAI, we are committed to transforming the way you engage with your documents. Whether it's simplifying 
+              complex material, extracting insights, or turning your PDFs into dynamic and digestible notes, our platform ensures 
+              every user gets the most out of their resources. 
             </p>
+            
           </div>
           <div className="w-full md:w-1/2 relative h-[300px]">
-            {" "}
             {/* Added fixed height */}
             <div className="relative w-full h-full rounded-3xl overflow-hidden">
-              {" "}
               {/* Added wrapper with overflow */}
               <Image
                 src="/linear.webp"
                 width={600}
                 height={600}
-                alt="linear demo image"
+                alt="ScribeAI in action"
                 className="object-cover w-full h-full" /* Changed to object-cover */
               />
             </div>
@@ -103,10 +41,12 @@ export function Features() {
       <WobbleCard containerClassName="col-span-1 bg-slate-800 min-h-[300px]">
         <div className="p-6">
           <h2 className="max-w-80 text-left text-balance text-2xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-            No shirt, no shoes, no weapons.
+          Join the Revolution with ScribeAI
           </h2>
           <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-            If someone yells "stop!", goes limp, or taps out, the fight is over.
+          With thousands of users already benefiting from our platform, ScribeAI is quickly becoming the go-to solution 
+              for AI-assisted document processing. Whether you're a researcher, student, or professional, our innovative tools 
+              are designed to save you time, reduce stress, and help you work smarter.
           </p>
         </div>
       </WobbleCard>
@@ -118,25 +58,24 @@ export function Features() {
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="w-full md:w-1/2 p-6">
             <h2 className="text-left text-balance text-2xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-              Signup for blazing-fast cutting-edge state of the art Gippity AI
-              wrapper today!
+              A Powerful Platform to Enhance Your Workflow
             </h2>
             <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-              With over 100,000 mothly active bot users, Gippity AI is the most
-              popular AI platform for developers.
+              Say goodbye to outdated and clunky note-making tools. ScribeAI brings you a modern, feature-rich text editor that 
+            allows for bold, italics, headings, and even code blocks. Effortlessly organize your thoughts, create detailed 
+            summaries, and customize your notes to fit your unique workflow.
             </p>
+            
           </div>
           <div className="w-full md:w-1/2 relative h-[300px]">
-            {" "}
             {/* Added fixed height */}
             <div className="relative w-full h-full rounded-3xl overflow-hidden">
-              {" "}
               {/* Added wrapper with overflow */}
               <Image
                 src="/linear.webp"
                 width={600}
                 height={600}
-                alt="linear demo image"
+                alt="ScribeAI demo in action"
                 className="object-cover w-full h-full" /* Changed to object-cover */
               />
             </div>

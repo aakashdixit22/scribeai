@@ -1,4 +1,5 @@
 import { useAction, useMutation } from "convex/react";
+import MarkdownIt from 'markdown-it';
 import {
   Bold, Italic, Sparkles, Underline, Code, List,
   AlignLeft, AlignCenter, AlignRight, Highlighter,
@@ -39,7 +40,12 @@ function EditorExtension({ editor, fileId }) {
                     Answer:`;
 
     const response = await run(PROMPT);
-    editor.commands.setContent(editor.getHTML() + `<p><strong>Answer: </strong>${response.response}</p>`);
+    
+    // Convert Markdown to HTML
+    const md = new MarkdownIt();
+    const htmlContent = md.render(response.response);
+    
+    editor.commands.setContent(editor.getHTML() + `<p><strong>Answer:</strong></p>${htmlContent}`);
 
     await saveNotes({
       fileId: fileId,
@@ -48,7 +54,7 @@ function EditorExtension({ editor, fileId }) {
     });
 
     toast("AI response added to the editor.");
-  };
+};
 
   const downloadAsPDF = async () => {
     try {

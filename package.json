@@ -40,6 +40,7 @@
     "html2pdf.js": "^0.10.2",
     "jspdf": "^2.5.2",
     "lucide-react": "^0.462.0",
+    "markdown-it": "^14.1.0",
     "next": "15.0.3",
     "next-themes": "^0.4.4",
     "nodemailer": "^6.9.16",
