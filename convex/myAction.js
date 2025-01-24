@@ -1,4 +1,3 @@
-"use client"
 import { ConvexVectorStore } from "@langchain/community/vectorstores/convex";
 
 import { action } from "./_generated/server.js";
