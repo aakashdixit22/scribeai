@@ -36,8 +36,8 @@ Installation
 
 Clone the Repository:
 
-bash
-CopyEdit
+ In bash,
+
 git clone https://github.com/your-username/scribeai.git cd scribeai
 
 Install Dependencies:
@@ -48,13 +48,13 @@ npm install
 Set Up Environment Variables: Create a .env.local file and add the following:
 
 env
-CopyEdit
+
 NEXT_PUBLIC_CLERK_API_KEY=your_clerk_api_key NEXT_PUBLIC_CONVEX_API_URL=your_convex_db_url GOOGLE_API_KEY=your_google_api_key
 
 Run the Application:
 
-bash
-CopyEdit
+ In bash,
+
 npm run dev
 
 Open your browser and navigate to http://localhost:3000.
