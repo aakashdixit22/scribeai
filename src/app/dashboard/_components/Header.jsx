@@ -1,7 +1,8 @@
 import React from "react";
-import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { Home, Smile, Menu, SidebarOpen } from "lucide-react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 function Header({ onMenuClick }) {
   const { user } = useUser();
@@ -48,15 +49,17 @@ function Header({ onMenuClick }) {
             </button>
           </Link>
 
-          <SignOutButton signOutOptions={{redirectUrl: "/logout"}} >
-          <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+          
+          <button className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]"
+          onClick={()=>redirect('/logout')}
+          >
             <div className="relative rounded-lg bg-slate-900 px-4 py-2 transition-colors group-hover:bg-slate-800">
               <span className="relative z-10 font-medium text-sm text-white">
                 Sign out
               </span>
             </div>
           </button>
-        </SignOutButton>
+        
         </div>
       </div>
     </div>

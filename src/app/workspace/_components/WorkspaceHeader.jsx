@@ -4,7 +4,6 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { api } from "../../../../convex/_generated/api";
 import { useNotes } from "@/lib/context";
-import { SignOutButton } from "@clerk/nextjs";
 import {
   HomeIcon,
   GridIcon,
@@ -150,14 +149,14 @@ function WorkspaceHeader({ fileName, fileId }) {
             </Link>
 
             <div className="block lg:hidden">
-              <SignOutButton signOutOptions={{ redirectUrl: "/logout" }}>
-                <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px] block w-full text-left">
+              
+                <button onClick={()=>redirect('/logout')} className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px] block w-full text-left">
                   <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
                     <LogOutIcon className="w-4 h-4 text-white" />
                     <span className="text-sm text-white">Sign out</span>
                   </div>
                 </button>
-              </SignOutButton>
+              
             </div>
           </div>
         )}
@@ -183,14 +182,14 @@ function WorkspaceHeader({ fileName, fileId }) {
           </Link>
 
           <div className="hidden lg:block">
-            <SignOutButton signOutOptions={{ redirectUrl: "/logout" }}>
-              <button className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
+            
+              <button onClick={()=>redirect('/logout')} className="group rounded-lg bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 p-[2px]">
                 <div className="rounded-lg bg-slate-900 px-3 py-1.5 transition group-hover:bg-slate-800 flex items-center space-x-2">
                   <LogOutIcon className="w-4 h-4 text-white" />
                   <span className="text-sm text-white">Sign out</span>
                 </div>
               </button>
-            </SignOutButton>
+            
           </div>
         </div>
 
