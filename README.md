@@ -42,8 +42,7 @@ git clone https://github.com/your-username/scribeai.git cd scribeai
 
 Install Dependencies:
 
-bash
-CopyEdit
+
 npm install
 
 Set Up Environment Variables: Create a .env.local file and add the following:
