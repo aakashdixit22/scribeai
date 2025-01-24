@@ -1,7 +1,5 @@
-
-Ah, you're referring to how it looks in the preview of Markdown-supported platforms (e.g., GitHub) or rich text editors. Let me ensure everything displays as intended when copied and previewed correctly. Here's a version that's optimized for both Markdown and rich text:
-
 ScribeAI
+
 ScribeAI is an AI-powered web application designed to help users create, manage, and save notes effectively. By combining the power of artificial intelligence and a robust text editor, ScribeAI allows users to upload PDF files, ask context-based questions, and generate AI-driven notes seamlessly. With real-time updates, secure authentication, and rich export options, ScribeAI redefines the note-taking experience.
 
 Features
@@ -35,34 +33,31 @@ Framer Motion: Adds interactive animations for a polished user experience.
 Authentication
 Clerk: Secures user data with robust authentication mechanisms.
 Installation
+
 Clone the Repository:
 
 bash
-Copy
-Edit
-git clone https://github.com/your-username/scribeai.git
-cd scribeai
+CopyEdit
+git clone https://github.com/your-username/scribeai.git cd scribeai
+
 Install Dependencies:
 
 bash
-Copy
-Edit
+CopyEdit
 npm install
-Set Up Environment Variables:
-Create a .env.local file and add the following:
+
+Set Up Environment Variables: Create a .env.local file and add the following:
 
 env
-Copy
-Edit
-NEXT_PUBLIC_CLERK_API_KEY=your_clerk_api_key
-NEXT_PUBLIC_CONVEX_API_URL=your_convex_db_url
-GOOGLE_API_KEY=your_google_api_key
+CopyEdit
+NEXT_PUBLIC_CLERK_API_KEY=your_clerk_api_key NEXT_PUBLIC_CONVEX_API_URL=your_convex_db_url GOOGLE_API_KEY=your_google_api_key
+
 Run the Application:
 
 bash
-Copy
-Edit
+CopyEdit
 npm run dev
+
 Open your browser and navigate to http://localhost:3000.
 
 How It Works
@@ -71,11 +66,13 @@ Ask Questions: Use the text editor to ask questions about the uploaded PDF's con
 Generate Notes: Click the AI button to get context-based answers and notes.
 Save & Manage Notes: Save your notes for future access or download them as PDFs or Docx files.
 Contributions
+
 Contributions are welcome! If you'd like to improve ScribeAI, feel free to fork the repository and create a pull request.
 
 License
+
 This project is licensed under the MIT License.
 
 Contact
-For questions or feedback, reach out at your-email@example.com.
 
+For questions or feedback, reach out at your-email@example.com.
