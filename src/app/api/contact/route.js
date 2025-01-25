@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 export async function POST(req) {
   try {
     const { name, email, message } = await req.json();
-    
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -196,7 +196,7 @@ export async function POST(req) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+      to: [process.env.EMAIL_USER, process.env.EMAIL_USER2],
       subject: "✨ New Contact Form Submission",
       html: htmlContent,
       text: `New Contact Form Submission
@@ -210,15 +210,21 @@ Received on ${new Date().toLocaleString()}`,
 
     await transporter.sendMail(mailOptions);
 
-    return new Response(JSON.stringify({ success: true, message: "Email sent successfully!" }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ success: true, message: "Email sent successfully!" }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   } catch (error) {
-    console.error('Email sending error:', error);
-    return new Response(JSON.stringify({ success: false, message: "Email sending failed!" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    console.error("Email sending error:", error);
+    return new Response(
+      JSON.stringify({ success: false, message: "Email sending failed!" }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 }
