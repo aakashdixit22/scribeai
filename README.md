@@ -61,10 +61,12 @@ ScribeAI is a cutting-edge web application built with **Next.js**, designed to r
 ## 📸 Screenshots  
 
 ![Screenshot 1](https://github.com/aakashdixit22/scribeai/blob/main/public/md_demo/md_demo1.png?raw=true)  
-*Intuitive Text Editor and PDF Viewer*  
 
-![Screenshot 2](https://github.com/aakashdixit22/scribeai/blob/main/public/md_demo/md_demo2.png?raw=true)  
-*Efficient PDF and Notes Management*  
+
+![Screenshot 2](https://github.com/aakashdixit22/scribeai/blob/main/public/md_demo/md_demo2.png?raw=true) 
+
+![Screenshot 3](https://github.com/aakashdixit22/scribeai/blob/main/public/md_demo/md_demo3.gif?raw=true) 
+
 
 ---
 
