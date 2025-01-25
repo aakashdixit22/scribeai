@@ -1,6 +1,6 @@
 import { UserButton, useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
-import Image from "next/image";
+import { redirect } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { api } from "../../../../convex/_generated/api";
 import { useNotes } from "@/lib/context";
