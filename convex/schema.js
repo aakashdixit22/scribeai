@@ -20,7 +20,7 @@ export default defineSchema({
     metadata: v.any(),
   }).vectorIndex("byEmbedding", {
     vectorField: "embedding",
-    dimensions: 768,
+    dimensions: 3072,
   }),
 
     notes: defineTable({
