@@ -136,7 +136,7 @@ const Page = () => {
             {filteredFiles.map((file, index) => (
               <div key={index} className="group relative">
                 <Link href={`/workspace/${file.fileId}`}>
-                  <div className="flex flex-col items-center h-40 sm:h-48 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gray-800 border border-gray-700 hover:border-teal-600 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                  <div className="flex flex-col items-center h-40 sm:h-48 overflow-hidden p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gray-800 border border-gray-700 hover:border-teal-600 hover:shadow-lg transition-all duration-200 cursor-pointer">
                     <div className="flex items-center justify-between w-full mb-3 sm:mb-4">
                       <div className="w-12 h-12 sm:w-16 sm:h-16 relative mx-auto">
                         <img src="/note.png" alt="Note" className="w-full h-full object-contain" />
@@ -151,7 +151,10 @@ const Page = () => {
                         <Trash2 className="h-5 w-5 sm:h-6 sm:w-6" />
                       </button>
                     </div>
-                    <h2 className="font-medium text-base sm:text-lg text-gray-200 line-clamp-2 mb-2 text-center">
+                    <h2
+                      title={file.fileName}
+                      className="w-full min-w-0 font-medium text-base sm:text-lg text-gray-200 line-clamp-2 break-all mb-2 text-center"
+                    >
                       {file.fileName}
                     </h2>
                     <div className="mt-auto">

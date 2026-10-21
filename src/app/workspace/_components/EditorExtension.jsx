@@ -34,6 +34,11 @@ function EditorExtension({ editor, fileId }) {
     let formattedResultList = [];
     resultList.forEach((item) => formattedResultList.push(item.pageContent));
 
+    if (formattedResultList.length === 0) {
+      toast.error("No relevant content found in this PDF for the selected text.");
+      return;
+    }
+
     const PROMPT = `Based on the query: "${selectedText}", analyze the following vector search results and generate a concise and well-structured response. Use the provided context to create an accurate and detailed answer directly:
                     Vector Search Results:
                     ${formattedResultList.join("\n")}

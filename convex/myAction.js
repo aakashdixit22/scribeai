@@ -50,17 +50,18 @@ export const search = action({
         new GoogleGenerativeAIEmbeddings({
           apiKey: getGoogleApiKey(ctx),
           model: "gemini-embedding-001",
-          taskType: TaskType.RETRIEVAL_DOCUMENT,
-          title: "Document title",
+          taskType: TaskType.RETRIEVAL_QUERY,
         }),
         { ctx }
       );
 
-      const results = await vectorStore.similaritySearch(args.query, 3);
-      const filteredResults = results.filter(result => 
-        Object.values(result.metadata).join('') === args.fileId
-      );
-      
+      // The index has no fileId filter, so search across all files (256 is
+      // Convex's max) and then keep only this file's chunks.
+      const results = await vectorStore.similaritySearch(args.query, 256);
+      const filteredResults = results
+        .filter(result => Object.values(result.metadata).join('') === args.fileId)
+        .slice(0, 5);
+
       return JSON.stringify(filteredResults);
     } catch (error) {
       console.error("Search error:", error);
